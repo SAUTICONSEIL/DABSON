@@ -1,0 +1,78 @@
+{
+  "updated": "2026-11-18T16:00:00Z",
+  "profiles": {
+    "tiktok": "https://www.tiktok.com/@ledabsontik",
+    "youtube": "https://www.youtube.com/results?search_query=dabson",
+    "facebook": "https://www.facebook.com/share/1Afig9FihB/",
+    "instagram": "https://www.instagram.com/ledabsonig",
+    "snapchat": "https://snapchat.com/t/voKzsihM"
+  },
+  "videos": [
+    {
+      "platform": "tiktok",
+      "title": "7,2M vues",
+      "kind": "Sketch",
+      "thumb": "img/tk-72m.jpg",
+      "url": "",
+      "date": "2026-01-01",
+      "likes": "815K",
+      "com": "10K",
+      "save": "76K"
+    },
+    {
+      "platform": "tiktok",
+      "title": "2,6M vues",
+      "kind": "Sketch",
+      "thumb": "img/tk-26m.jpg",
+      "url": "",
+      "date": "2026-02-24",
+      "likes": "378K",
+      "com": "5 350",
+      "save": "46K"
+    },
+    {
+      "platform": "tiktok",
+      "title": "2,2M vues",
+      "kind": "Saint Valentin",
+      "thumb": "img/tk-22m.jpg",
+      "url": "",
+      "date": "2026-02-14",
+      "likes": "307K",
+      "com": "3 756",
+      "save": "33K"
+    },
+    {
+      "platform": "tiktok",
+      "title": "834K vues",
+      "kind": "Mini série",
+      "thumb": "img/tk-834k.jpg",
+      "url": "",
+      "date": "2026-04-11",
+      "likes": "150K",
+      "com": "2 410",
+      "save": "15K"
+    },
+    {
+      "platform": "tiktok",
+      "title": "725K vues",
+      "kind": "Mini série",
+      "thumb": "img/tk-725k.jpg",
+      "url": "",
+      "date": "2026-02-13",
+      "likes": "111K",
+      "com": "2 479",
+      "save": "15K"
+    },
+    {
+      "platform": "tiktok",
+      "title": "648K vues",
+      "kind": "Sketch",
+      "thumb": "img/tk-648k.jpg",
+      "url": "",
+      "date": "2026-06-20",
+      "likes": "135K",
+      "com": "1 616",
+      "save": "11K"
+    }
+  ]
+}

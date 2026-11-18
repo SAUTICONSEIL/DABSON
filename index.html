@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DABSON · Media Kit 2026</title>
+<meta name="description" content="Dabson, créateur de contenu, web comédien et vidéaste ivoirien basé à Abidjan. Media kit 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0B;
+  --bg2:#121214;
+  --line:rgba(240,237,230,.1);
+  --line2:rgba(240,237,230,.2);
+  --txt:#F0EDE6;
+  --mute:#8E8B85;
+  --blue:#3B52FF;
+  --yellow:#FFD21A;
+  --cond:"Big Shoulders Display",Impact,sans-serif;
+  --sans:"Figtree",system-ui,sans-serif;
+  --pad:clamp(18px,4vw,60px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.intro{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+b,strong{font-weight:800}
+::selection{background:var(--blue);color:#fff}
+
+.cap{display:inline-block;background:#fff;color:#0A0A0B;font-weight:800;font-size:15px;line-height:1.25;padding:6px 11px 7px;border-radius:7px;box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.cap.dk{background:var(--txt)}
+.cap.bl{background:var(--blue);color:#fff}
+.cap.tilt{transform:rotate(-2deg)}
+.small{font-size:13px;color:var(--mute);letter-spacing:.01em}
+
+.intro-scr{position:fixed;inset:0;z-index:200;background:#000;display:grid;place-items:center;transition:clip-path .9s cubic-bezier(.77,0,.18,1);clip-path:inset(0 0 0 0)}
+.intro-scr.out{clip-path:inset(0 0 100% 0)}
+.intro-scr .stack{display:flex;flex-direction:column;align-items:center;gap:12px}
+.intro-scr .cap{opacity:0;transform:translateY(12px) rotate(-2deg);transition:opacity .35s,transform .35s}
+.intro-scr .cap.on{opacity:1;transform:rotate(-2deg)}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px var(--pad);transition:background .4s,backdrop-filter .4s}
+.top.solid{background:rgba(10,10,11,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.logo{font-family:var(--cond);font-weight:900;font-size:30px;letter-spacing:.01em;line-height:1}
+.logo i{font-style:normal;color:var(--blue)}
+.nav{display:flex;gap:26px;font-weight:600;font-size:14px}
+.nav a{color:var(--mute);transition:color .25s}
+.nav a:hover,.nav a.on{color:var(--txt)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--txt);color:var(--bg);font-weight:800;font-size:14px;padding:11px 18px;border-radius:40px;transition:background .25s,color .25s}
+.btn:hover{background:var(--blue);color:#fff}
+.btn.ghost{background:transparent;color:var(--txt);box-shadow:inset 0 0 0 1px var(--line2)}
+.btn.ghost:hover{background:var(--txt);color:var(--bg)}
+@media (max-width:960px){.nav{display:none}}
+
+.player{position:fixed;left:var(--pad);bottom:18px;z-index:70;display:flex;align-items:center;gap:12px;background:rgba(18,18,20,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:14px;padding:9px 14px 9px 9px;max-width:330px;transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.player.show{transform:none}
+.player__th{width:38px;height:50px;border-radius:6px;overflow:hidden;flex:none}
+.player__th img{width:100%;height:100%;object-fit:cover}
+.player__t{font-size:12px;color:var(--mute)}
+.player__n{font-weight:800;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player__bar{height:3px;background:var(--line2);border-radius:3px;margin-top:6px;overflow:hidden}
+.player__bar i{display:block;height:100%;width:0;background:var(--txt)}
+@media (max-width:600px){.player{left:12px;right:12px;max-width:none}}
+
+.hero{min-height:100svh;padding:96px var(--pad) 40px;display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(20px,4vw,60px);align-items:center;position:relative}
+.hero__l{align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;gap:30px}
+.hero__name{font-family:var(--cond);font-weight:900;font-size:clamp(110px,15vw,260px);line-height:.78;letter-spacing:-.005em;text-transform:uppercase}
+.hero__name span{display:block;overflow:hidden}
+.hero__name span b{display:block;font-weight:900;transform:translateY(102%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.ready .hero__name span b{transform:none}
+.ready .hero__name span:nth-child(2) b{transition-delay:.08s}
+.hero__name span:nth-child(2) b{color:transparent;-webkit-text-stroke:2px var(--txt)}
+.hero__roles{display:flex;flex-wrap:wrap;gap:8px}
+.hero__roles .cap{font-size:14px;background:transparent;color:var(--txt);box-shadow:inset 0 0 0 1px var(--line2)}
+.hero__intro{max-width:340px;font-size:17px;line-height:1.5;color:var(--mute)}
+.hero__intro b{color:var(--txt)}
+
+.phone{position:relative;width:clamp(260px,24vw,360px);aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#000;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 0 1px var(--line);opacity:0;transform:translateY(40px) scale(.96);transition:opacity 1s .2s,transform 1.2s cubic-bezier(.2,.8,.2,1) .2s;cursor:pointer;user-select:none}
+.ready .phone{opacity:1;transform:none}
+.phone__slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .7s,transform 3.2s linear}
+.phone__slides img.on{opacity:1;transform:scale(1)}
+.phone:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 18%,transparent 62%,rgba(0,0,0,.7));pointer-events:none}
+.phone__segs{position:absolute;left:10px;right:10px;top:10px;z-index:3;display:flex;gap:4px}
+.phone__segs i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
+.phone__segs i:after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(var(--p,0));transform-origin:left}
+.phone__who{position:absolute;left:12px;top:22px;z-index:3;display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px}
+.phone__who img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid #fff}
+.phone__who small{font-weight:500;color:rgba(255,255,255,.75)}
+.phone__rail{position:absolute;right:10px;bottom:90px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:16px}
+.phone__rail div{display:flex;flex-direction:column;align-items:center;gap:3px;font-weight:800;font-size:12px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.phone__rail svg{width:30px;height:30px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.4))}
+.phone__cap{position:absolute;left:12px;right:60px;bottom:22px;z-index:3}
+.phone__cap .cap{transition:opacity .3s,transform .3s}
+.phone__cap .cap.swap{opacity:0;transform:translateY(8px) rotate(-2deg)}
+.phone__cap p{font-size:13px;margin-top:8px;font-weight:600;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+
+.hero__r{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;gap:22px}
+.kpi{border-top:1px solid var(--line2);padding-top:14px}
+.kpi strong{display:block;font-family:var(--cond);font-weight:800;font-size:clamp(46px,4.6vw,76px);line-height:.9}
+.kpi span{color:var(--mute);font-size:14px}
+.next{display:inline-flex;align-items:center;gap:12px;margin-top:6px;font-weight:700}
+.next i{width:40px;height:40px;border-radius:50%;background:var(--txt);color:var(--bg);display:grid;place-items:center;font-style:normal;transition:transform .3s}
+.next:hover i{transform:translateY(4px)}
+@media (max-width:1000px){.hero{grid-template-columns:1fr;padding-top:90px}.hero__l{gap:20px}.hero__name{font-size:30vw}.phone{width:min(78vw,360px);justify-self:center}.hero__r{flex-direction:row;flex-wrap:wrap}.kpi{flex:1;min-width:140px}}
+
+.ep{padding:clamp(90px,12vw,170px) var(--pad);position:relative}
+.ep__head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,80px)}
+.ep__tag{margin-bottom:22px}
+.h{font-family:var(--cond);font-weight:900;font-size:clamp(64px,9.5vw,170px);line-height:.84;text-transform:uppercase;letter-spacing:-.005em}
+.h em{font-style:normal;color:var(--blue)}
+.h .o{color:transparent;-webkit-text-stroke:2px var(--txt)}
+.ep__lead{max-width:420px;color:var(--mute);font-size:17px;line-height:1.55}
+.ep__lead b{color:var(--txt)}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.lines .l{display:block;overflow:hidden}
+.lines .l>span{display:block;transform:translateY(102%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.lines.in .l>span{transform:none}
+.lines.in .l:nth-child(2)>span{transition-delay:.08s}
+
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,100px);align-items:start}
+.story__pics{position:sticky;top:90px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
+.story__pics figure{border-radius:16px;overflow:hidden;position:relative}
+.story__pics figure:first-child{grid-row:span 2}
+.story__pics img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.story__pics figure:hover img{transform:scale(1.05)}
+.story__pics figcaption{position:absolute;left:12px;bottom:12px}
+.story__txt p{font-size:clamp(20px,2vw,27px);line-height:1.42;color:var(--mute);margin-bottom:26px}
+.story__txt p b{color:var(--txt)}
+.story__txt p mark{background:none;color:var(--txt);box-shadow:inset 0 -.32em 0 rgba(59,82,255,.55)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.facts div{background:var(--bg2);border-radius:14px;padding:20px}
+.facts strong{display:block;font-family:var(--cond);font-size:50px;font-weight:800;line-height:1}
+.facts span{color:var(--mute);font-size:14px}
+@media (max-width:900px){.story{grid-template-columns:1fr}.story__pics{position:relative;top:0}}
+
+.sig{padding:clamp(90px,12vw,160px) var(--pad);background:var(--txt);color:var(--bg);overflow:hidden;position:relative}
+.sig__word{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(90px,19vw,340px);line-height:.8;letter-spacing:-.01em;white-space:nowrap}
+.sig__word .o{color:transparent;-webkit-text-stroke:2px var(--bg)}
+.sig__word .b{color:var(--blue)}
+.sig__row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);margin-top:60px;align-items:start}
+.sig__row p{font-size:clamp(20px,2vw,28px);line-height:1.35;font-weight:500}
+.sig__row p b{font-weight:800}
+.sig .cap{background:var(--bg);color:var(--txt)}
+.sig__stick{position:absolute;right:var(--pad);top:clamp(40px,6vw,80px)}
+@media (max-width:800px){.sig__row{grid-template-columns:1fr}.sig__stick{display:none}}
+
+.ratings{border-top:1px solid var(--line2)}
+.rt{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 40px;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);transition:background .3s,padding .3s}
+.rt:not(.rt--h):hover{background:var(--bg2);padding-left:16px;padding-right:16px}
+.rt--h{color:var(--mute);font-size:13px;font-weight:600;padding:14px 0}
+.rt__pf{display:flex;align-items:center;gap:14px;font-weight:800;font-size:clamp(20px,2vw,28px)}
+.rt__pf svg{width:26px;height:26px;flex:none}
+.rt strong{font-family:var(--cond);font-weight:800;font-size:clamp(38px,4vw,64px);line-height:.9}
+.rt small{display:block;color:var(--mute);font-size:13px;margin-top:4px}
+.up{color:#7CE3A0;font-weight:700;font-size:14px}
+.rt__go{width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;transition:all .3s}
+.rt:hover .rt__go{background:var(--txt);color:var(--bg);transform:rotate(-45deg)}
+.big{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.big div{background:var(--bg2);border-radius:16px;padding:22px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.big strong{font-family:var(--cond);font-weight:800;font-size:clamp(44px,4.4vw,70px);line-height:.9}
+.big span{color:var(--mute);font-size:14px;line-height:1.4}
+.big div:first-child{background:var(--blue)}
+.big div:first-child span{color:rgba(255,255,255,.8)}
+.total{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap}
+.total strong{font-family:var(--cond);font-weight:900;font-size:clamp(90px,14vw,240px);line-height:.8}
+@media (max-width:900px){.rt{grid-template-columns:1fr 1fr;gap:10px}.rt--h{display:none}.rt__pf{grid-column:1/-1}.rt__go{display:none}.big{grid-template-columns:1fr 1fr}}
+
+.aud{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,90px);margin-top:80px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:30px}
+.tab{padding:9px 16px;border-radius:30px;font-weight:700;font-size:14px;color:var(--mute);box-shadow:inset 0 0 0 1px var(--line2);transition:all .25s}
+.tab.on{background:var(--txt);color:var(--bg);box-shadow:none}
+.rows{display:flex;flex-direction:column;gap:14px}
+.row{display:grid;grid-template-columns:160px 1fr 60px;align-items:center;gap:14px;font-weight:600}
+.row em{font-style:normal;text-align:right;color:var(--mute);font-size:14px}
+.row .tr{height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+.row .tr i{display:block;height:100%;width:0;background:var(--line2);border-radius:8px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.row.first .tr i{background:var(--txt)}
+.genre{display:flex;height:110px;border-radius:14px;overflow:hidden;gap:4px}
+.genre div{display:flex;flex-direction:column;justify-content:space-between;padding:14px;transition:flex-basis 1s cubic-bezier(.2,.8,.2,1);min-width:70px}
+.genre .m{background:var(--bg2)}
+.genre .f{background:var(--bg2);color:var(--mute)}
+.genre strong{font-family:var(--cond);font-size:44px;font-weight:800;line-height:1;color:var(--txt)}
+.agebig{margin-top:34px}
+.agebig strong{display:block;font-family:var(--cond);font-weight:900;font-size:clamp(80px,9vw,150px);line-height:.85;white-space:nowrap}
+.agebig p{color:var(--mute);margin-top:12px;line-height:1.5;max-width:420px}
+.agebig p b{color:var(--txt)}
+@media (max-width:900px){.aud{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr 54px}}
+
+.series{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.serie{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--bg2)}
+.serie img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.serie:hover img{transform:scale(1.06)}
+.serie__ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:18px;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.85))}
+.serie__ov .cap{align-self:flex-start}
+.serie h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(34px,3.4vw,54px);line-height:.88}
+.serie p{color:rgba(255,255,255,.75);margin-top:8px;line-height:1.4;font-size:15px}
+.s2{margin-top:14px;border-radius:18px;background:var(--bg2);display:grid;grid-template-columns:1.3fr 1fr;overflow:hidden}
+.s2__l{padding:clamp(24px,4vw,48px)}
+.s2__l .cap{align-self:flex-start}
+.s2__l h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(56px,7vw,120px);line-height:.84;margin-top:16px}
+.s2__l p{margin-top:18px;color:var(--mute);font-size:17px;line-height:1.5;max-width:520px}
+.s2__l p b{color:var(--txt)}
+.count{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
+.count div{display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid var(--line);padding:20px 4px}
+.count strong{font-family:var(--cond);font-weight:800;font-size:clamp(52px,6vw,100px);line-height:.9;font-variant-numeric:tabular-nums}
+.count span{color:var(--mute);font-size:13px}
+.extra{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.extra>div{border-radius:18px;box-shadow:inset 0 0 0 1px var(--line);padding:24px;display:flex;gap:18px;align-items:center}
+.extra .ic{flex:none;width:58px;height:58px;border-radius:14px;background:var(--txt);color:var(--bg);display:grid;place-items:center}
+.extra h4{font-size:20px;font-weight:800;margin-bottom:4px}
+.extra p{color:var(--mute);line-height:1.45}
+@media (max-width:900px){.series{grid-template-columns:1fr 1fr}.s2{grid-template-columns:1fr}.count{border-left:0;border-top:1px solid var(--line)}.extra{grid-template-columns:1fr}}
+@media (max-width:560px){.series{grid-template-columns:1fr}}
+
+.reel{height:320vh;position:relative}
+.reel__in{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.reel__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:60px var(--pad) 0}
+.reel__track{display:flex;gap:14px;padding:0 var(--pad);will-change:transform;align-items:flex-start}
+.shot{flex:none;width:clamp(220px,22vw,320px);aspect-ratio:9/14;border-radius:18px;overflow:hidden;position:relative}
+.shot:nth-child(3n+2){margin-top:50px}
+.shot:nth-child(3n){margin-top:20px}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.shot:hover img{transform:scale(1.05)}
+.shot figcaption{position:absolute;left:12px;bottom:12px}
+.reel__n{font-family:var(--cond);font-weight:800;font-size:40px;color:var(--mute)}
+.reel__n b{color:var(--txt)}
+@media (max-width:760px){.reel{height:auto}.reel__in{position:relative;height:auto;padding:80px 0}.reel__track{overflow-x:auto;transform:none!important;scroll-snap-type:x mandatory;padding-bottom:10px}.shot{scroll-snap-align:start}.shot:nth-child(n){margin-top:0}}
+
+.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vid{position:relative;display:block;border-radius:18px;overflow:hidden;aspect-ratio:9/13;background:var(--bg2);opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.vid.in{opacity:1;transform:none}
+.vid img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.vid:hover img{transform:scale(1.05)}
+.vid:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3),transparent 25%,transparent 55%,rgba(0,0,0,.8))}
+.vid__top{position:absolute;left:14px;right:14px;top:14px;z-index:2;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:13px}
+.vid__rank{font-family:var(--cond);font-size:56px;font-weight:900;line-height:.8}
+.vid__rail{position:absolute;right:12px;bottom:80px;z-index:2;display:flex;flex-direction:column;gap:12px;align-items:center;font-weight:800;font-size:12px}
+.vid__rail svg{width:26px;height:26px}
+.vid__bot{position:absolute;left:14px;right:60px;bottom:16px;z-index:2}
+.vid__bot strong{display:block;font-family:var(--cond);font-weight:900;font-size:44px;line-height:.9}
+.vid__bot span{font-size:13px;color:rgba(255,255,255,.75);font-weight:600}
+.vid__play{position:absolute;left:50%;top:50%;z-index:2;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:rgba(255,255,255,.92);color:#000;display:grid;place-items:center;opacity:0;transform:scale(.7);transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.vid:hover .vid__play{opacity:1;transform:scale(1)}
+.sync{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:14px;font-weight:600}
+.sync i{width:9px;height:9px;border-radius:50%;background:#7CE3A0;animation:pl 1.8s infinite}
+@keyframes pl{50%{opacity:.3}}
+@media (max-width:900px){.feed{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.feed{grid-template-columns:1fr}}
+
+.credits{text-align:center;padding:clamp(100px,14vw,200px) var(--pad);position:relative}
+.credits__t{font-size:15px;color:var(--mute);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.credits__list{margin:40px auto 0;max-width:1100px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 0}
+.credits__list span{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:clamp(34px,4.6vw,76px);line-height:1.05;padding:0 .35em;color:rgba(240,237,230,.24);transition:color .3s}
+.credits__list span:hover{color:var(--txt)}
+.credits__list span.lit{color:var(--txt)}
+.credits__list span:not(:last-child):after{content:"·";margin-left:.35em;color:rgba(240,237,230,.16)}
+.feat{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:70px;text-align:left}
+.feat div{background:var(--bg2);border-radius:14px;padding:18px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+.feat strong{font-size:18px;font-weight:800}
+.feat span{font-size:12px;color:var(--mute);font-weight:600}
+@media (max-width:900px){.feat{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.feat{grid-template-columns:1fr 1fr}}
+
+.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fmt{position:relative;border-radius:18px;background:var(--bg2);padding:24px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:background .35s,color .35s}
+.fmt:hover{background:var(--txt);color:var(--bg)}
+.fmt__n{font-family:var(--cond);font-weight:800;font-size:22px;color:var(--mute)}
+.fmt h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(40px,3.6vw,58px);line-height:.88;margin-top:10px}
+.fmt p{color:var(--mute);line-height:1.45;margin-top:10px}
+.fmt:hover p,.fmt:hover .fmt__n{color:#55524c}
+.fmt__go{display:inline-flex;align-items:center;gap:10px;font-weight:800;margin-top:22px}
+.fmt__go i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;box-shadow:inset 0 0 0 1px currentColor;font-style:normal;transition:transform .3s}
+.fmt:hover .fmt__go i{transform:rotate(-45deg);background:var(--blue);color:#fff;box-shadow:none}
+.rights{margin-top:50px;border-top:1px solid var(--line2)}
+.acc button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:22px 0;text-align:left;font-weight:800;font-size:clamp(18px,1.8vw,24px)}
+.acc button i{width:34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line2);display:grid;place-items:center;font-style:normal;transition:transform .4s}
+.acc.open button i{transform:rotate(45deg)}
+.acc__c{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1)}
+.acc.open .acc__c{grid-template-rows:1fr}
+.acc__c>div{overflow:hidden}
+.acc__c ul{list-style:none;padding-bottom:24px;display:grid;gap:12px;max-width:900px}
+.acc__c li{color:var(--mute);line-height:1.55;padding-left:20px;position:relative}
+.acc__c li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--txt)}
+.acc__c li b{color:var(--txt)}
+@media (max-width:900px){.formats{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.formats{grid-template-columns:1fr}}
+
+.book>*{min-width:0}
+.book{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,6vw,90px)}
+.contact{margin-top:30px;display:grid;gap:10px}
+.contact a{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--bg2);border-radius:14px;padding:18px 20px;transition:background .3s}
+.contact a:hover{background:#1b1b1e}
+.contact small{display:block;color:var(--mute);font-size:13px;margin-bottom:2px}
+.contact strong{font-size:clamp(17px,1.6vw,21px);word-break:break-all}
+.copy{font-size:12px;font-weight:700;border-radius:30px;padding:7px 12px;box-shadow:inset 0 0 0 1px var(--line2);flex:none}
+.copy:hover{background:var(--txt);color:var(--bg)}
+.socials{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.socials a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:30px;box-shadow:inset 0 0 0 1px var(--line2);font-weight:700;font-size:14px;transition:all .25s}
+.socials a:hover{background:var(--txt);color:var(--bg)}
+.socials svg{width:16px;height:16px}
+.form{background:var(--bg2);border-radius:22px;padding:clamp(20px,3vw,34px)}
+.step{margin-bottom:24px}
+.step>p{color:var(--mute);font-size:14px;font-weight:600;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:10px 15px;border-radius:40px;box-shadow:inset 0 0 0 1px var(--line2);font-size:14px;font-weight:700;transition:all .2s}
+.chip:hover{box-shadow:inset 0 0 0 1px var(--txt)}
+.chip.on{background:var(--txt);color:var(--bg);box-shadow:none}
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:70px;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.day{border-radius:12px;box-shadow:inset 0 0 0 1px var(--line2);padding:10px 4px;text-align:center;transition:all .2s}
+.day small{display:block;font-size:11px;color:var(--mute);font-weight:700;text-transform:uppercase}
+.day strong{display:block;font-family:var(--cond);font-size:30px;line-height:1.05}
+.day.on{background:var(--blue);box-shadow:none}
+.day.on small{color:rgba(255,255,255,.8)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fields input,.fields textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line2);padding:14px 2px;color:var(--txt);font:inherit;font-size:16px;outline:none}
+.fields input:focus,.fields textarea:focus{border-color:var(--txt)}
+.fields textarea{grid-column:1/-1;resize:vertical;min-height:80px}
+.fields ::placeholder{color:var(--mute)}
+.send{margin-top:24px;width:100%;display:flex;justify-content:space-between;align-items:center;background:var(--txt);color:var(--bg);border-radius:50px;padding:8px 8px 8px 24px;font-weight:900;font-size:17px;transition:background .3s,color .3s}
+.send i{width:48px;height:48px;border-radius:50%;background:var(--bg);color:var(--txt);display:grid;place-items:center;font-style:normal;transition:transform .4s}
+.send:hover{background:var(--blue);color:#fff}
+.send:hover i{transform:rotate(-45deg)}
+.result{display:none;margin-top:18px;border-radius:14px;box-shadow:inset 0 0 0 1px var(--line2);padding:18px;line-height:1.6}
+.result.on{display:block}
+.result a{text-decoration:underline;font-weight:700}
+@media (max-width:900px){.book{grid-template-columns:1fr}.fields{grid-template-columns:1fr}}
+
+.end{position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.end__roll{height:min(70vh,560px);overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent)}
+.end__in{position:absolute;left:0;right:0;top:0;text-align:center;animation:roll 26s linear infinite}
+@keyframes roll{from{transform:translateY(min(70vh,560px))}to{transform:translateY(-100%)}}
+.end__in div{margin:0 0 34px}
+.end__in small{display:block;color:var(--mute);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.end__in strong{font-family:var(--cond);font-weight:800;font-size:clamp(30px,3vw,46px);text-transform:uppercase}
+.end__word{font-family:var(--cond);font-weight:900;text-transform:uppercase;text-align:center;font-size:clamp(60px,13vw,260px);line-height:.8;padding:0 var(--pad) 10px;white-space:nowrap;overflow:hidden}
+.end__word .o{color:transparent;-webkit-text-stroke:2px var(--txt)}
+.end__bar{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px var(--pad) 90px;color:var(--mute);font-size:14px;font-weight:600}
+.end__bar a:hover{color:var(--txt)}
+.end__bar b{color:var(--txt)}
+
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.vid{opacity:1;transform:none}.lines .l>span,.hero__name span b{transform:none}.phone{opacity:1;transform:none}}
+</style>
+</head>
+<body class="intro">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 4.6 2.6.2.3.6.3.8 0 1-1.5 2.5-2.6 4.6-2.6 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="i-com" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3C6.5 3 2 6.9 2 11.6c0 2.6 1.4 4.9 3.6 6.5L5 21.5l3.9-2c1 .3 2 .4 3.1.4 5.5 0 10-3.9 10-8.6S17.5 3 12 3z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path fill="currentColor" d="M13 4.5v4C6.5 9.3 3.5 13.5 3 19.5c2.2-3.3 5.3-4.8 10-4.9v4.4l8-7.3z"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3h12a1 1 0 0 1 1 1v17l-7-4.5L5 21V4a1 1 0 0 1 1-1z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4l14 8-14 8z"/></symbol>
+  <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.2 1.8 3.7 4 3.9v3.2c-1.5 0-2.8-.4-4-1.2v6.3c0 3.4-2.6 5.8-5.8 5.8S5 18.6 5 15.4c0-3.4 2.9-6 6.4-5.6v3.3c-1.6-.4-3.1.7-3.1 2.3 0 1.4 1.1 2.4 2.4 2.4 1.5 0 2.5-1 2.5-2.7V3h3.4z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zM12 8.2a3.8 3.8 0 1 0 0 7.6 3.8 3.8 0 0 0 0-7.6zM17.3 6.4h.01"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"/></symbol>
+  <symbol id="i-snap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8c2.8 0 5 2 5 5.2v2.2c.5.2 1.1 0 1.6-.2.6-.2 1 .6.5 1-.6.5-1.6.8-2.2 1.1.6 1.6 1.8 3 3.6 3.6.5.2.4.8 0 1-.8.3-1.6.4-2.1.6-.2.5-.1 1.2-.8 1.1-.8-.1-1.7-.4-2.7.1-.9.5-1.6 1.6-2.9 1.6s-2-1.1-2.9-1.6c-1-.5-1.9-.2-2.7-.1-.7.1-.6-.6-.8-1.1-.5-.2-1.3-.3-2.1-.6-.4-.2-.5-.8 0-1 1.8-.6 3-2 3.6-3.6-.6-.3-1.6-.6-2.2-1.1-.5-.4-.1-1.2.5-1 .5.2 1.1.4 1.6.2V8c0-3.2 2.2-5.2 5-5.2z"/></symbol>
+</svg>
+
+<div class="intro-scr" id="introScr">
+  <div class="stack">
+    <span class="cap tilt" data-i="0">Dabson présente</span>
+    <span class="cap bl tilt" data-i="1">le media kit 2026</span>
+  </div>
+</div>
+
+<header class="top" id="top">
+  <a href="#accueil" class="logo">DABSON<i>.</i></a>
+  <nav class="nav" id="nav">
+    <a href="#histoire">L'histoire</a>
+    <a href="#chiffres">Les chiffres</a>
+    <a href="#series">Les séries</a>
+    <a href="#videos">Les vidéos</a>
+    <a href="#marques">Les marques</a>
+    <a href="#formats">Les formats</a>
+  </nav>
+  <a href="#contact" class="btn">Collaborer</a>
+</header>
+
+<div class="player" id="player">
+  <div class="player__th"><img id="playerImg" src="img/visiere.jpg" alt=""></div>
+  <div style="min-width:0;flex:1">
+    <div class="player__t" id="playerT">Épisode 1</div>
+    <div class="player__n" id="playerN">L'histoire</div>
+    <div class="player__bar"><i id="playerBar"></i></div>
+  </div>
+</div>
+
+<main>
+
+<section class="hero" id="accueil" data-ep="Pilote" data-name="Bienvenue chez Dabson" data-img="img/regard.jpg">
+  <div class="hero__l">
+    <div class="hero__roles"><span class="cap">Créateur de contenu</span><span class="cap">Web comédien</span><span class="cap">Vidéaste</span></div>
+    <h1 class="hero__name"><span><b>Dab</b></span><span><b>son</b></span></h1>
+    <p class="hero__intro">Humour, storytelling et mini séries depuis <b>Abidjan</b>. Une communauté de <b>plus de 2,85 millions</b> de personnes qui attendent le prochain épisode.</p>
+  </div>
+
+  <div class="phone" id="phone" title="Toucher pour passer">
+    <div class="phone__slides" id="slides">
+      <img src="img/visiere.jpg" alt="Dabson" class="on">
+      <img src="img/g-clin.jpg" alt="">
+      <img src="img/g-film.jpg" alt="">
+      <img src="img/regard.jpg" alt="">
+      <img src="img/g-slam.jpg" alt="">
+      <img src="img/sourire2.jpg" alt="">
+    </div>
+    <div class="phone__segs" id="segs"></div>
+    <div class="phone__who"><img src="img/sourire2.jpg" alt=""><div>ledabsontik<br><small>Abidjan</small></div></div>
+    <div class="phone__rail">
+      <div><svg><use href="#i-heart"/></svg>1,8M</div>
+      <div><svg><use href="#i-com"/></svg>28,3K</div>
+      <div><svg><use href="#i-save"/></svg>76K</div>
+      <div><svg><use href="#i-share"/></svg>16K</div>
+    </div>
+    <div class="phone__cap"><span class="cap tilt" id="capTxt">on est boosté !</span><p id="capSub">ledabsontik · 2,1M abonnés</p></div>
+  </div>
+
+  <div class="hero__r">
+    <div class="kpi"><strong>2,1M</strong><span>abonnés TikTok</span></div>
+    <div class="kpi"><strong>22,6M</strong><span>vues en 28 jours, tous réseaux</span></div>
+    <div class="kpi"><strong>7,2M</strong><span>vues sur une seule vidéo</span></div>
+    <a href="#histoire" class="next"><i>↓</i>Épisode suivant</a>
+  </div>
+</section>
+
+<section class="ep" id="histoire" data-ep="Épisode 1" data-name="L'histoire" data-img="img/visiere.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap tilt">Épisode 1</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>Le gars à</span></span><span class="l"><span>la <em>visière</em></span></span></h2>
+    </div>
+    <p class="ep__lead rv">Retournée, toujours bleue, jamais oubliée. La visière est devenue <b>sa signature visuelle</b>, celle que sa communauté reconnaît au premier coup d'œil.</p>
+  </div>
+  <div class="story">
+    <div class="story__pics rv">
+      <figure><img src="img/visiere.jpg" alt="Dabson"><figcaption><span class="cap">Abidjan</span></figcaption></figure>
+      <figure><img src="img/g-film.jpg" alt="Dabson filme"></figure>
+      <figure><img src="img/g-clin.jpg" alt="Dabson"></figure>
+    </div>
+    <div class="story__txt">
+      <p class="rv"><b>Dabson</b> est un <mark>créateur de contenu</mark>, <mark>web comédien</mark> et <mark>vidéaste</mark> ivoirien basé à Abidjan.</p>
+      <p class="rv">Avec <b>plus de 2 millions d'abonnés sur TikTok</b>, il s'est construit un univers autour de <b>l'humour</b>, du <b>storytelling</b> et de formats vidéo incarnés.</p>
+      <p class="rv">Il est à l'origine de mini séries comme <b>Drague à l'africaine</b>, <b>10 jours pour tomber amoureux</b> ou <b>Le Boosté</b>.</p>
+      <p class="rv">Son contenu lui permet de collaborer avec des <b>marques locales et internationales</b>, en glissant leurs produits et leurs messages dans des formats divertissants pensés pour les réseaux.</p>
+      <p class="rv">Il est aussi <b>le vidéaste de la créatrice et webactiviste Inadebelle</b>.</p>
+      <div class="facts rv">
+        <div><strong data-count="4">0</strong><span>réseaux actifs</span></div>
+        <div><strong data-count="18" data-suffix="+">0</strong><span>marques partenaires</span></div>
+        <div><strong data-count="10" data-suffix="+">0</strong><span>pays touchés</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sig" data-ep="Interlude" data-name="On est boosté !" data-img="img/sourire2.jpg">
+  <span class="cap tilt sig__stick">sa phrase culte</span>
+  <div class="sig__word lines" data-lines><span class="l"><span>On est</span></span><span class="l"><span><span class="b">boosté</span><span class="o"> !</span></span></span></div>
+  <div class="sig__row">
+    <p class="rv"><b>Boosté</b>, c'est avoir de l'énergie, de la réussite ou de l'assurance, et voir les choses avancer vite <b>sans avoir besoin de forcer</b>.</p>
+    <p class="rv">L'expression est devenue <b>un marqueur de son univers</b>. Sa communauté se fait appeler « mes boostés », et la reprend dans les commentaires, en story, jusque dans la rue.</p>
+  </div>
+</section>
+
+<section class="ep" id="chiffres" data-ep="Épisode 2" data-name="Les chiffres" data-img="img/g-ecran.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap tilt">Épisode 2</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>Les</span></span><span class="l"><span><em>audiences</em></span></span></h2>
+    </div>
+    <p class="ep__lead rv">Sur 28 jours, du 7 septembre au 6 octobre 2026. <b>Chiffres issus des tableaux de bord officiels</b> de chaque plateforme.</p>
+  </div>
+
+  <div class="ratings rv">
+    <div class="rt rt--h"><span>Plateforme</span><span>Communauté</span><span>Vues sur 28 jours</span><span>Évolution</span><span></span></div>
+    <a class="rt" data-pf="tiktok" href="#" target="_blank" rel="noopener"><div class="rt__pf"><svg><use href="#i-tiktok"/></svg>TikTok</div><div><strong>2,1M</strong><small>abonnés</small></div><div><strong>12M</strong><small>vues de publication</small></div><div><span class="up">+221,3 %</span><small>1,8M j'aime · 28,3K commentaires</small></div><span class="rt__go">↗</span></a>
+    <a class="rt" data-pf="facebook" href="#" target="_blank" rel="noopener"><div class="rt__pf"><svg><use href="#i-fb"/></svg>Facebook</div><div><strong>550K</strong><small>abonnés</small></div><div><strong>7,8M</strong><small>vues</small></div><div><span class="up">+336 %</span><small>747 455 interactions · +31 572 suivis</small></div><span class="rt__go">↗</span></a>
+    <a class="rt" data-pf="youtube" href="#" target="_blank" rel="noopener"><div class="rt__pf"><svg><use href="#i-yt"/></svg>YouTube</div><div><strong>100K</strong><small>abonnés</small></div><div><strong>2,1M</strong><small>vues</small></div><div><span class="up">+9,5K abonnés</span><small>33,2K heures de visionnage</small></div><span class="rt__go">↗</span></a>
+    <a class="rt" data-pf="instagram" href="#" target="_blank" rel="noopener"><div class="rt__pf"><svg><use href="#i-ig"/></svg>Instagram</div><div><strong>100K</strong><small>abonnés</small></div><div><strong>702K</strong><small>vues dont 616K sur les réels</small></div><div><span class="up">+4 447 followers</span><small>78 957 interactions</small></div><span class="rt__go">↗</span></a>
+  </div>
+
+  <div class="big">
+    <div class="rv"><strong>22,6M</strong><span>vues cumulées en 28 jours sur les quatre réseaux</span></div>
+    <div class="rv"><strong>27 203</strong><span>ouvertures uniques sur une seule story Facebook</span></div>
+    <div class="rv"><strong>2,8M</strong><span>spectateurs TikTok, dont 1M de nouveaux</span></div>
+    <div class="rv"><strong>83 %</strong><span>du visionnage YouTube se fait sur mobile</span></div>
+  </div>
+
+  <div class="aud" id="audience">
+    <div class="rv">
+      <p class="small" style="margin-bottom:14px">Où se trouve son public</p>
+      <div class="tabs" id="audTabs">
+        <button class="tab on" data-k="tiktok">TikTok</button>
+        <button class="tab" data-k="facebook">Facebook</button>
+        <button class="tab" data-k="youtube">YouTube</button>
+        <button class="tab" data-k="instagram">Instagram</button>
+      </div>
+      <div class="rows" id="audRows"></div>
+      <p class="small" id="audNote" style="margin-top:18px"></p>
+    </div>
+    <div class="rv">
+      <p class="small" style="margin-bottom:14px">Répartition par genre</p>
+      <div class="genre" id="genre"><div class="m" style="flex-basis:63%"><span class="small">Hommes</span><strong id="gm">63 %</strong></div><div class="f" style="flex-basis:37%"><span class="small">Femmes</span><strong id="gf">34 %</strong></div></div>
+      <div class="agebig"><p class="small">Tranche d'âge principale</p><strong id="ageV">61,5 %</strong><p id="ageT"></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ep" id="series" style="padding-top:0" data-ep="Épisode 3" data-name="Les séries" data-img="img/tk-22m.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap tilt">Épisode 3</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>Des séries</span></span><span class="l"><span><em>qu'on attend</em></span></span></h2>
+    </div>
+    <p class="ep__lead rv">Des personnages récurrents, des épisodes à suivre, et un public qui revient chaque soir pour <b>connaître la suite</b>.</p>
+  </div>
+  <div class="series">
+    <div class="serie rv"><img src="img/tk-725k.jpg" alt=""><div class="serie__ov"><span class="cap tilt">Mini série</span><div><h3>Drague à l'africaine</h3><p>Les codes de la séduction revus avec humour.</p></div></div></div>
+    <div class="serie rv"><img src="img/tk-834k.jpg" alt=""><div class="serie__ov"><span class="cap tilt">Mini série</span><div><h3>10 jours pour tomber amoureux</h3><p>Une romance en compte à rebours, épisode après épisode.</p></div></div></div>
+    <div class="serie rv"><img src="img/tk-26m.jpg" alt=""><div class="serie__ov"><span class="cap tilt">Série</span><div><h3>Le Boosté</h3><p>La série qui porte sa signature jusque dans son titre.</p></div></div></div>
+  </div>
+  <div class="s2 rv">
+    <div class="s2__l">
+      <span class="cap bl tilt">Bientôt</span>
+      <h3>Saison 2</h3>
+      <p>La suite de la première histoire, avec le même casting. <b>10 épisodes</b>, premier épisode prévu <b>entre le 25 et le 31 décembre</b>. Le bon moment pour associer une marque à un temps fort.</p>
+    </div>
+    <div class="count">
+      <div><strong data-cd="d">00</strong><span>jours</span></div>
+      <div><strong data-cd="h">00</strong><span>heures</span></div>
+      <div><strong data-cd="m">00</strong><span>min</span></div>
+      <div><strong data-cd="s">00</strong><span>sec</span></div>
+    </div>
+  </div>
+  <div class="extra">
+    <div class="rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><div><h4>Trophée YouTube 100K</h4><p>Le cap des 100 000 abonnés est franchi sur la chaîne.</p></div></div>
+    <div class="rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><div><h4>Vidéaste d'Inadebelle</h4><p>Derrière la caméra de la créatrice et webactiviste Inadebelle.</p></div></div>
+  </div>
+</section>
+
+<section class="reel" id="coulisses" data-ep="Bonus" data-name="Les coulisses" data-img="img/g-equipe.jpg">
+  <div class="reel__in">
+    <div class="reel__head">
+      <div><div class="ep__tag"><span class="cap tilt">Bonus</span></div><h2 class="h">Les <em>coulisses</em></h2></div>
+      <span class="reel__n"><b id="reelN">01</b> / 09</span>
+    </div>
+    <div class="reel__track" id="reelTrack">
+      <figure class="shot"><img src="img/g-film.jpg" alt=""><figcaption><span class="cap tilt">en tournage</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-clin.jpg" alt=""><figcaption><span class="cap tilt">mes boostés 😉</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-equipe.jpg" alt=""><figcaption><span class="cap tilt">l'équipe</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-slam.jpg" alt=""><figcaption><span class="cap tilt">I love slam</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-ecran.jpg" alt=""><figcaption><span class="cap tilt">le cadrage</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-debardeur.jpg" alt=""><figcaption><span class="cap tilt">Abidjan</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-event.jpg" alt=""><figcaption><span class="cap tilt">tapis rouge</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-profil.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-nb.jpg" alt=""><figcaption><span class="cap tilt">vidéaste</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="ep" id="videos" data-ep="Épisode 4" data-name="Les vidéos" data-img="img/tk-72m.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap tilt">Épisode 4</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>Celles qui ont</span></span><span class="l"><span><em>explosé</em></span></span></h2>
+    </div>
+    <div>
+      <p class="ep__lead rv" style="margin-bottom:16px">Chaque nouvelle publication s'ajoute ici <b>automatiquement</b>. Un clic ouvre la vidéo sur sa plateforme.</p>
+      <div class="sync rv"><i></i><span id="syncTxt">Flux connecté</span></div>
+    </div>
+  </div>
+  <div class="tabs rv" id="feedTabs">
+    <button class="tab on" data-k="all">Top</button>
+    <button class="tab" data-k="tiktok">TikTok</button>
+    <button class="tab" data-k="youtube">YouTube</button>
+    <button class="tab" data-k="facebook">Facebook</button>
+    <button class="tab" data-k="instagram">Instagram</button>
+  </div>
+  <div class="feed" id="feed"></div>
+</section>
+
+<section class="credits" id="marques" data-ep="Épisode 5" data-name="Les marques" data-img="img/g-event.jpg">
+  <div class="ep__tag"><span class="cap tilt">Épisode 5</span></div>
+  <p class="credits__t rv" style="margin-top:20px">Avec la participation de</p>
+  <div class="credits__list" id="credits"></div>
+  <div class="feat">
+    <div class="rv"><span>Collab</span><strong>Redmi</strong></div>
+    <div class="rv"><span>Collab</span><strong>Rexona</strong></div>
+    <div class="rv"><span>Collab</span><strong>Close up</strong></div>
+    <div class="rv"><span>Collab</span><strong>Infinix</strong></div>
+    <div class="rv"><span>Collab</span><strong>Ivoire360</strong></div>
+    <div class="rv"><span>Collab</span><strong>Restaurant 25/8</strong></div>
+  </div>
+</section>
+
+<section class="ep" id="formats" data-ep="Épisode 6" data-name="Les formats" data-img="img/g-debardeur.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap tilt">Épisode 6</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>Les</span></span><span class="l"><span><em>formats</em></span></span></h2>
+    </div>
+    <p class="ep__lead rv">Chaque collaboration est construite sur mesure. Choisissez un format, <b>le management vous envoie le tarif</b> adapté à votre projet.</p>
+  </div>
+  <div class="formats">
+    <a class="fmt rv" href="#contact" data-pick="Réel"><div><span class="fmt__n">01</span><h3>Réel</h3><p>Une vidéo créée par Dabson et diffusée sur TikTok, Facebook, Instagram ou YouTube.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+    <a class="fmt rv" href="#contact" data-pick="Stories"><div><span class="fmt__n">02</span><h3>Story 24h</h3><p>Une présence rapide et directe auprès de sa communauté, sur un ou plusieurs réseaux.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+    <a class="fmt rv" href="#contact" data-pick="Publication"><div><span class="fmt__n">03</span><h3>Publication</h3><p>Une photo ou un visuel publié sur ses comptes, pour une mise en avant durable.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+    <a class="fmt rv" href="#contact" data-pick="Pack tous réseaux"><div><span class="fmt__n">04</span><h3>Pack tous réseaux</h3><p>Le même contenu diffusé partout pour toucher toute la communauté d'un coup.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+    <a class="fmt rv" href="#contact" data-pick="Événement"><div><span class="fmt__n">05</span><h3>Événement</h3><p>Présence de Dabson à votre événement, avec ou sans création de contenu et vlog.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+    <a class="fmt rv" href="#contact" data-pick="Placement dans une série"><div><span class="fmt__n">06</span><h3>Placement série</h3><p>Votre marque intégrée naturellement dans un épisode de ses mini séries.</p></div><span class="fmt__go"><i>↗</i>Demander le tarif</span></a>
+  </div>
+  <div class="rights rv">
+    <div class="acc"><button>Droits d'utilisation des contenus <i>+</i></button><div class="acc__c"><div><ul>
+      <li>Chaque prestation comprend <b>la création du contenu et sa diffusion sur les réseaux de Dabson</b>.</li>
+      <li>Toute <b>réutilisation du contenu par une marque</b> sur ses propres supports (réseaux sociaux, site internet) est soumise à un accord préalable.</li>
+      <li>La durée, les supports et les droits publicitaires (sponsoring, campagnes Ads) sont <b>définis ensemble selon les besoins de la marque</b>.</li>
+    </ul></div></div></div>
+  </div>
+</section>
+
+<section class="ep" id="contact" style="padding-top:0" data-ep="Épisode 7" data-name="Collaborer" data-img="img/sourire2.jpg">
+  <div class="ep__head">
+    <div>
+      <div class="ep__tag"><span class="cap bl tilt">Prochain épisode : votre marque</span></div>
+      <h2 class="h lines" data-lines><span class="l"><span>On tourne</span></span><span class="l"><span><em>ensemble ?</em></span></span></h2>
+    </div>
+  </div>
+  <div class="book">
+    <div class="rv">
+      <p class="ep__lead">Choisissez un format et une date, laissez quelques mots. <b>Votre demande arrive directement au management</b> sur WhatsApp ou par mail.</p>
+      <div class="contact">
+        <a href="https://wa.me/2250712194673" target="_blank" rel="noopener"><div><small>Management · WhatsApp</small><strong>+225 07 12 19 46 73</strong></div><span class="copy" data-copy="+2250712194673">Copier</span></a>
+        <a href="mailto:collaborationdabson@gmail.com"><div><small>Mail</small><strong>collaborationdabson@gmail.com</strong></div><span class="copy" data-copy="collaborationdabson@gmail.com">Copier</span></a>
+      </div>
+      <div class="socials">
+        <a data-pf="tiktok" href="#" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>TikTok</a>
+        <a data-pf="facebook" href="#" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a>
+        <a data-pf="instagram" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
+        <a data-pf="youtube" href="#" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg>YouTube</a>
+        <a data-pf="snapchat" href="#" target="_blank" rel="noopener"><svg><use href="#i-snap"/></svg>Snapchat</a>
+      </div>
+    </div>
+    <form class="form rv" id="form">
+      <div class="step"><p>Le format</p><div class="chips" data-group="type"><button type="button" class="chip on">Réel</button><button type="button" class="chip">Stories</button><button type="button" class="chip">Publication</button><button type="button" class="chip">Pack tous réseaux</button><button type="button" class="chip">Événement</button><button type="button" class="chip">Placement dans une série</button></div></div>
+      <div class="step"><p>Un appel le</p><div class="days" id="days"></div></div>
+      <div class="step"><p>Vers</p><div class="chips" data-group="slot"><button type="button" class="chip on">10h</button><button type="button" class="chip">12h</button><button type="button" class="chip">15h</button><button type="button" class="chip">17h</button><button type="button" class="chip">19h</button></div></div>
+      <div class="step" style="margin-bottom:0"><p>Vous</p>
+        <div class="fields">
+          <input name="name" placeholder="Votre nom" required>
+          <input name="brand" placeholder="Marque ou entreprise">
+          <textarea name="msg" placeholder="Votre projet en quelques mots"></textarea>
+        </div>
+      </div>
+      <button class="send" type="submit">Envoyer la demande <i>↗</i></button>
+      <div class="result" id="result"></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="end" data-ep="Générique" data-name="Fin de l'épisode" data-img="img/g-profil.jpg">
+  <div class="end__roll">
+    <div class="end__in">
+      <div><small>Une production</small><strong>Dabson</strong></div>
+      <div><small>Créateur, comédien, vidéaste</small><strong>Dabson</strong></div>
+      <div><small>Avec</small><strong>Les boostés</strong></div>
+      <div><small>Management</small><strong>Équipe Dabson</strong></div>
+      <div><small>Tourné à</small><strong>Abidjan, Côte d'Ivoire</strong></div>
+      <div><small>Diffusé sur</small><strong>TikTok · Facebook · Instagram · YouTube · Snapchat</strong></div>
+      <div><small>Site internet</small><strong>SC Project</strong></div>
+      <div><small>Prochain épisode</small><strong>Saison 2, fin décembre</strong></div>
+    </div>
+  </div>
+  <div class="end__word">On est <span class="o">boosté</span></div>
+  <div class="end__bar">
+    <span>© 2026 Dabson</span>
+    <a href="#contact">collaborationdabson@gmail.com</a>
+    <a href="https://scproject.tech/" target="_blank" rel="noopener">Site conçu par <b>SC Project</b></a>
+  </div>
+</footer>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const PROFILES={tiktok:"https://www.tiktok.com/@ledabsontik",youtube:"https://www.youtube.com/results?search_query=dabson",facebook:"https://www.facebook.com/share/1Afig9FihB/",instagram:"https://www.instagram.com/ledabsonig",snapchat:"https://snapchat.com/t/voKzsihM"};
+const PF_NAME={tiktok:"TikTok",youtube:"YouTube",facebook:"Facebook",instagram:"Instagram"};
+const FALLBACK=[{"platform":"tiktok","title":"7,2M vues","kind":"Sketch","thumb":"img/tk-72m.jpg","url":"","date":"2026-01-01","likes":"815K","com":"10K","save":"76K"},{"platform":"tiktok","title":"2,6M vues","kind":"Sketch","thumb":"img/tk-26m.jpg","url":"","date":"2026-02-24","likes":"378K","com":"5 350","save":"46K"},{"platform":"tiktok","title":"2,2M vues","kind":"Saint Valentin","thumb":"img/tk-22m.jpg","url":"","date":"2026-02-14","likes":"307K","com":"3 756","save":"33K"},{"platform":"tiktok","title":"834K vues","kind":"Mini série","thumb":"img/tk-834k.jpg","url":"","date":"2026-04-11","likes":"150K","com":"2 410","save":"15K"},{"platform":"tiktok","title":"725K vues","kind":"Mini série","thumb":"img/tk-725k.jpg","url":"","date":"2026-02-13","likes":"111K","com":"2 479","save":"15K"},{"platform":"tiktok","title":"648K vues","kind":"Sketch","thumb":"img/tk-648k.jpg","url":"","date":"2026-06-20","likes":"135K","com":"1 616","save":"11K"}];
+
+function applyProfiles(p){Object.assign(PROFILES,p||{});$$("[data-pf]").forEach(a=>{const u=PROFILES[a.dataset.pf];if(u)a.href=u})}
+applyProfiles();
+
+(function intro(){
+  const caps=$$("#introScr .cap");
+  setTimeout(()=>caps[0].classList.add("on"),150);
+  setTimeout(()=>caps[1].classList.add("on"),550);
+  setTimeout(()=>{$("#introScr").classList.add("out");document.body.classList.remove("intro");document.body.classList.add("ready")},1350);
+  setTimeout(()=>$("#introScr").remove(),2400);
+})();
+
+(function phone(){
+  const imgs=$$("#slides img"),segs=$("#segs"),cap=$("#capTxt"),sub=$("#capSub");
+  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["mes boostés 😉","une communauté de 2,85M"],["en tournage","créateur, comédien, vidéaste"],["regard de la série","12M de vues en 28 jours"],["I love slam","Abidjan, Côte d'Ivoire"],["épisode suivant ce soir","saison 2 fin décembre"]];
+  imgs.forEach(()=>segs.appendChild(document.createElement("i")));
+  const bars=$$("i",segs);let i=0,t0=performance.now();const D=3200;
+  function go(n){imgs[i].classList.remove("on");i=(n+imgs.length)%imgs.length;imgs[i].classList.add("on");t0=performance.now();cap.classList.add("swap");setTimeout(()=>{cap.textContent=T[i][0];sub.textContent=T[i][1];cap.classList.remove("swap")},250)}
+  (function loop(t){const p=Math.min(1,(t-t0)/D);bars.forEach((b,k)=>b.style.setProperty("--p",k<i?1:k===i?p:0));if(p>=1)go(i+1);requestAnimationFrame(loop)})(t0);
+  $("#phone").addEventListener("click",e=>{const r=e.currentTarget.getBoundingClientRect();go(e.clientX-r.left<r.width/3?i-1:i+1)});
+})();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+$$(".rv,[data-lines]").forEach(el=>io.observe(el));
+
+function fmt(v,dec,suf){return (dec?v.toFixed(dec).replace(".",","):Math.round(v))+(suf||"")}
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const el=e.target,to=+el.dataset.count,suf=el.dataset.suffix;const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1200);el.textContent=fmt(to*(1-Math.pow(1-p,3)),0,suf);if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.5});
+$$("[data-count]").forEach(el=>cio.observe(el));
+
+function tabs(sel,cb){const box=$(sel);box.addEventListener("click",e=>{const b=e.target.closest(".tab");if(!b)return;$$(".tab",box).forEach(t=>t.classList.toggle("on",t===b));cb(b.dataset.k)})}
+
+const AUD={
+  tiktok:{rows:[["Côte d'Ivoire",23.6],["États Unis",15.1],["Burkina Faso",14.1],["Cameroun",8.4],["Togo",7.5],["Mali",7.4],["Congo Kinshasa",6.6],["Bénin",3.8]],note:"Spectateurs TikTok sur 28 jours",m:63,f:34,age:"61,5 %",ageT:"des spectateurs TikTok ont <b>entre 18 et 24 ans</b>. 29,2 % ont entre 25 et 34 ans."},
+  facebook:{rows:[["Côte d'Ivoire",49.8],["Burkina Faso",12.7],["Bénin",8.4],["Autres pays",29.1]],note:"Followers Facebook",m:89,f:12,age:"83,3 %",ageT:"des followers Facebook ont <b>entre 18 et 34 ans</b>."},
+  youtube:{rows:[["Côte d'Ivoire",42.3],["Burkina Faso",8.2],["Togo",6.9]],note:"Vues YouTube sur 28 jours",m:87.4,f:12.4,age:"57,1 %",ageT:"des vues YouTube viennent des <b>18 à 34 ans</b>, et <b>84,7 %</b> du temps de visionnage vient de non abonnés."},
+  instagram:{rows:[["Côte d'Ivoire",25.5],["Congo Kinshasa",11.7],["Bénin",10.3],["Togo",6.8],["Sénégal",5.8]],note:"Instagram, lieux principaux",m:89.3,f:10.7,age:"82,8 %",ageT:"de l'audience Instagram a <b>entre 18 et 34 ans</b>, et <b>55,5 % des vues</b> viennent de non followers."}
+};
+const nf=n=>String(n).replace(".",",")+" %";
+function renderAud(k){
+  const d=AUD[k],max=Math.max(...d.rows.map(r=>r[1]));
+  $("#audRows").innerHTML=d.rows.map((r,i)=>`<div class="row${i===0?" first":""}"><span>${r[0]}</span><div class="tr"><i data-w="${r[1]/max*100}"></i></div><em>${nf(r[1])}</em></div>`).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>$$("#audRows i").forEach(i=>i.style.width=i.dataset.w+"%")));
+  $("#audNote").textContent=d.note;
+  const g=$("#genre");g.children[0].style.flexBasis=d.m+"%";g.children[1].style.flexBasis=(100-d.m)+"%";
+  $("#gm").textContent=nf(d.m);$("#gf").textContent=nf(d.f);$("#ageV").textContent=d.age;$("#ageT").innerHTML=d.ageT;
+}
+tabs("#audTabs",renderAud);
+const aio=new IntersectionObserver(es=>{if(es[0].isIntersecting){renderAud("tiktok");aio.disconnect()}},{threshold:.2});aio.observe($("#audience"));
+
+(function countdown(){const target=new Date("2026-12-25T19:00:00Z").getTime();const els=["d","h","m","s"].map(k=>$(`[data-cd="${k}"]`));const t=()=>{let r=Math.max(0,target-Date.now())/1000;const v=[Math.floor(r/86400),Math.floor(r%86400/3600),Math.floor(r%3600/60),Math.floor(r%60)];els.forEach((e,i)=>e.textContent=String(v[i]).padStart(2,"0"))};t();setInterval(t,1000)})();
+
+let VIDEOS=FALLBACK;
+function fmtDate(s){try{return new Date(s).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}}
+function renderFeed(k){
+  const list=VIDEOS.filter(v=>k==="all"||v.platform===k).slice(0,9);
+  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><img src="${v.thumb}" alt="" loading="lazy"><div class="vid__top"><span class="cap">${PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"} · ${fmtDate(v.date)}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
+  $$("#feed .vid").forEach((el,i)=>setTimeout(()=>el.classList.add("in"),80*i));
+}
+tabs("#feedTabs",renderFeed);
+fetch("data/videos.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{if(j.videos&&j.videos.length)VIDEOS=j.videos;applyProfiles(j.profiles);if(j.updated)$("#syncTxt").textContent="Flux connecté · mis à jour le "+fmtDate(j.updated)}).catch(()=>{}).finally(()=>{const fio=new IntersectionObserver(es=>{if(es[0].isIntersecting){renderFeed("all");fio.disconnect()}},{threshold:.1});fio.observe($("#videos"))});
+
+(function credits(){const B=["Samsung","Rexona","Infinix","Close up","Xiaomi","Yango","Chicken Nation","Kadolo","Sam's Abidjan","ZTE","Betclic","Ivoire360","Itel","Paripesa","YEMAG","Nafolo","Kimia Lite","Redmi"];const box=$("#credits");box.innerHTML=B.map(n=>`<span>${n}</span>`).join("");const sp=$$("span",box);let k=0;setInterval(()=>{sp.forEach(s=>s.classList.remove("lit"));sp[k%sp.length].classList.add("lit");k+=5},900)})();
+
+$$(".acc button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
+
+(function booking(){
+  const days=$("#days"),now=new Date();const W=["dim","lun","mar","mer","jeu","ven","sam"],M=["janv","févr","mars","avr","mai","juin","juil","août","sept","oct","nov","déc"];
+  let first=true;for(let i=1;i<=21;i++){const d=new Date(now);d.setDate(now.getDate()+i);if(d.getDay()===0)continue;const b=document.createElement("button");b.type="button";b.className="day"+(first?" on":"");first=false;b.dataset.v=`${W[d.getDay()]} ${d.getDate()} ${M[d.getMonth()]}`;b.innerHTML=`<small>${W[d.getDay()]}</small><strong>${d.getDate()}</strong><small>${M[d.getMonth()]}</small>`;days.appendChild(b)}
+  days.addEventListener("click",e=>{const b=e.target.closest(".day");if(!b)return;$$(".day",days).forEach(x=>x.classList.toggle("on",x===b))});
+  $$(".chips").forEach(g=>g.addEventListener("click",e=>{const c=e.target.closest(".chip");if(!c)return;$$(".chip",g).forEach(x=>x.classList.toggle("on",x===c))}));
+  $$("[data-pick]").forEach(a=>a.addEventListener("click",()=>{$$('[data-group="type"] .chip').forEach(c=>c.classList.toggle("on",c.textContent===a.dataset.pick))}));
+  $("#form").addEventListener("submit",e=>{
+    e.preventDefault();const f=e.target;
+    const type=$('[data-group="type"] .chip.on').textContent,slot=$('[data-group="slot"] .chip.on').textContent,day=$(".day.on").dataset.v;
+    const txt=`Bonjour l'équipe Dabson,\n\nJe souhaite recevoir le tarif et réserver un appel.\nFormat : ${type}\nAppel : ${day} vers ${slot} (heure d'Abidjan)\nNom : ${f.name.value}\nMarque : ${f.brand.value||"Non précisée"}\n\n${f.msg.value}`;
+    const wa="https://wa.me/2250712194673?text="+encodeURIComponent(txt);
+    const ml="mailto:collaborationdabson@gmail.com?subject="+encodeURIComponent("Collaboration · "+type)+"&body="+encodeURIComponent(txt);
+    const r=$("#result");r.innerHTML=`<b>Votre demande est prête.</b> Envoyez la en un clic :<br><a href="${wa}" target="_blank" rel="noopener">Ouvrir WhatsApp avec le message</a><br><a href="${ml}">Ouvrir le mail pré rempli</a><br><span class="small">Ou écrivez au +225 07 12 19 46 73</span>`;r.classList.add("on");
+  });
+})();
+
+$$("[data-copy]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();const t=b.textContent;navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent="Copié"},()=>{b.textContent="Sélectionnez"}).finally(()=>setTimeout(()=>b.textContent=t,1600))}));
+
+(function scroll(){
+  const top=$("#top"),player=$("#player"),pT=$("#playerT"),pN=$("#playerN"),pI=$("#playerImg"),pB=$("#playerBar");
+  const eps=$$("[data-ep]"),navs=$$("#nav a"),reel=$("#coulisses"),track=$("#reelTrack"),rn=$("#reelN");let cur=null;
+  function frame(){
+    const y=scrollY,vh=innerHeight;
+    top.classList.toggle("solid",y>40);
+    player.classList.toggle("show",y>vh*.6);
+    let act=eps[0];for(const s of eps){if(s.getBoundingClientRect().top<vh*.5)act=s}
+    if(act!==cur){cur=act;pT.textContent=act.dataset.ep;pN.textContent=act.dataset.name;pI.src=act.dataset.img;navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+act.id))}
+    const r=act.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height));pB.style.width=p*100+"%";
+    if(innerWidth>760){const rr=reel.getBoundingClientRect(),tot=reel.offsetHeight-vh,pp=Math.max(0,Math.min(1,-rr.top/tot)),max=track.scrollWidth-innerWidth;track.style.transform=`translateX(${-pp*max}px)`;rn.textContent=String(Math.min(9,1+Math.floor(pp*9))).padStart(2,"0")}
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
