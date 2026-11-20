@@ -428,6 +428,16 @@ b,strong{font-weight:800}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 
+.fans{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:14px;align-items:stretch;margin-top:60px}
+.fans figure{border-radius:18px;overflow:hidden;position:relative;background:var(--bg2)}
+.fans img{width:100%;height:100%;object-fit:cover;display:block}
+.fans figcaption{position:absolute;left:12px;bottom:12px}
+.fans__txt{background:var(--bg2);border-radius:18px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;color:var(--txt)}
+.fans__txt h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(40px,4vw,64px);line-height:.88}
+.fans__txt p{color:var(--mute);line-height:1.5;margin-top:14px}
+.fans__txt p b{color:var(--txt)}
+@media (max-width:900px){.fans{grid-template-columns:1fr 1fr}.fans__txt{grid-column:1/-1}}
+
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv,.vid{opacity:1;transform:none}.lines .l>span,.hero__name span b{transform:none}.phone{opacity:1;transform:none}}
 </style>
 </head>
@@ -558,6 +568,11 @@ html.lenis,html.lenis body{height:auto}
   <div class="sig__row">
     <p class="rv"><b>Boosté</b>, c'est avoir de l'énergie, de la réussite ou de l'assurance, et voir les choses avancer vite <b>sans avoir besoin de forcer</b>.</p>
     <p class="rv">L'expression est devenue <b>un marqueur de son univers</b>. Sa communauté se fait appeler « mes boostés », et la reprend dans les commentaires, en story, jusque dans la rue.</p>
+  </div>
+  <div class="fans">
+    <figure class="rv"><img src="img/fan-dessin.jpg" alt="Portrait de Dabson dessiné par un fan"><figcaption><span class="cap tilt">dessiné par un fan</span></figcaption></figure>
+    <figure class="rv"><img src="img/fan-ecran.jpg" alt="Dabson en fond d'écran"><figcaption><span class="cap tilt">en fond d'écran</span></figcaption></figure>
+    <div class="fans__txt rv"><h3>Ses<br>boostés</h3><p>Une communauté qui ne se contente pas de regarder : <b>elle le dessine, le met en fond d'écran</b> et reprend ses phrases au quotidien. Une marque associée à Dabson parle à un public <b>déjà attaché</b>.</p></div>
   </div>
 </section>
 
