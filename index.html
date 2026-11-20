@@ -206,6 +206,8 @@ b,strong{font-weight:800}
 .s2__l h3{font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(56px,7vw,120px);line-height:.84;margin-top:16px}
 .s2__l p{margin-top:18px;color:var(--mute);font-size:17px;line-height:1.5;max-width:520px}
 .s2__l p b{color:var(--txt)}
+.s2__img{position:relative;min-height:320px}
+.s2__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .count{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line)}
 .count div{display:flex;flex-direction:column;justify-content:center;align-items:center;border-right:1px solid var(--line);padding:20px 4px}
 .count strong{font-family:var(--cond);font-weight:800;font-size:clamp(52px,6vw,100px);line-height:.9;font-variant-numeric:tabular-nums}
@@ -532,7 +534,7 @@ html.lenis,html.lenis body{height:auto}
   <div class="story">
     <div class="story__pics rv"><svg class="visor" data-v="1" viewBox="0 0 60 40" style="right:-18px;top:-18px" aria-label="Visière cachée"><path d="M6 22c0-9 11-15 24-15s24 6 24 15c0 2-1 3-3 3H9c-2 0-3-1-3-3z" fill="#2E46E8"/><path d="M9 25h42c4 0 7 3 7 6 0 2-2 3-4 3H6c-2 0-4-1-4-3 0-3 3-6 7-6z" fill="#3B52FF"/><path d="M14 18c4-5 10-7 16-7" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
       <figure><img src="img/visiere.jpg" alt="Dabson"><figcaption><span class="cap">Abidjan</span></figcaption></figure>
-      <figure><img src="img/g-film.jpg" alt="Dabson filme"></figure>
+      <figure><img src="img/g-event.jpg" alt="Dabson"></figure>
       <figure><img src="img/g-clin.jpg" alt="Dabson"></figure>
     </div>
     <div class="story__txt">
@@ -618,16 +620,11 @@ html.lenis,html.lenis body{height:auto}
   </div>
   <div class="s2 rv">
     <div class="s2__l">
-      <span class="cap bl tilt">Bientôt</span>
-      <h3>Saison 2</h3>
-      <p>La suite de la première histoire, avec le même casting. <b>10 épisodes</b>, premier épisode prévu <b>entre le 25 et le 31 décembre</b>. Le bon moment pour associer une marque à un temps fort.</p>
+      <span class="cap bl tilt">À venir</span>
+      <h3>2027</h3>
+      <p><b>Plusieurs nouveaux concepts sont prévus pour 2027.</b> Le moment d'associer votre marque à un nouveau format, <b>avec une formule adéquate</b> construite ensemble.</p>
     </div>
-    <div class="count">
-      <div><strong data-cd="d">00</strong><span>jours</span></div>
-      <div><strong data-cd="h">00</strong><span>heures</span></div>
-      <div><strong data-cd="m">00</strong><span>min</span></div>
-      <div><strong data-cd="s">00</strong><span>sec</span></div>
-    </div>
+    <div class="s2__img"><img src="img/studio-bras.jpg" alt="Dabson"></div>
   </div>
   <div class="extra">
     <div class="rv"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg></span><div><h4>Trophée YouTube 100K</h4><p>Le cap des 100 000 abonnés est franchi sur la chaîne.</p></div></div>
@@ -635,7 +632,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="reel" id="coulisses" data-ep="Bonus" data-name="Les coulisses" data-img="img/g-equipe.jpg">
+<section class="reel" id="coulisses" data-ep="Bonus" data-name="Les coulisses" data-img="img/g-film.jpg">
   <div class="reel__in">
     <div class="reel__head">
       <div><div class="ep__tag"><span class="cap tilt">Bonus</span></div><h2 class="h">Les <em>coulisses</em></h2></div>
@@ -644,10 +641,10 @@ html.lenis,html.lenis body{height:auto}
     <div class="reel__track" id="reelTrack">
       <figure class="shot"><img src="img/g-film.jpg" alt=""><figcaption><span class="cap tilt">en tournage</span></figcaption></figure>
       <figure class="shot"><img src="img/g-clin.jpg" alt=""><figcaption><span class="cap tilt">mes boostés 😉</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-equipe.jpg" alt=""><figcaption><span class="cap tilt">l'équipe</span></figcaption></figure>
+      <figure class="shot"><img src="img/studio-regard.jpg" alt=""><figcaption><span class="cap tilt">le regard</span></figcaption></figure>
       <figure class="shot"><img src="img/g-slam.jpg" alt=""><figcaption><span class="cap tilt">I love slam</span></figcaption></figure>
       <figure class="shot"><img src="img/g-ecran.jpg" alt=""><figcaption><span class="cap tilt">le cadrage</span></figcaption></figure>
-      <figure class="shot"><img src="img/regard.jpg" alt=""><figcaption><span class="cap tilt">le regard</span></figcaption></figure>
+      <figure class="shot"><img src="img/graffiti-visiere.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
       <figure class="shot"><img src="img/g-event.jpg" alt=""><figcaption><span class="cap tilt">tapis rouge</span></figcaption></figure>
       <figure class="shot"><img src="img/g-profil.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
       <figure class="shot"><img src="img/g-nb.jpg" alt=""><figcaption><span class="cap tilt">vidéaste</span></figcaption></figure>
@@ -659,7 +656,7 @@ html.lenis,html.lenis body{height:auto}
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 4</span></div>
-      <h2 class="h lines" data-lines><span class="l"><span>Celles qui ont</span></span><span class="l"><span><em>explosé</em></span></span></h2>
+      <h2 class="h lines" data-lines><span class="l"><span>Les collabs qui</span></span><span class="l"><span>ont <em>explosé</em></span></span></h2>
     </div>
     <div>
       <p class="ep__lead rv" style="margin-bottom:16px">Chaque nouvelle publication s'ajoute ici <b>automatiquement</b>. Un clic ouvre la vidéo sur sa plateforme.</p>
@@ -680,14 +677,6 @@ html.lenis,html.lenis body{height:auto}
   <div class="ep__tag"><span class="cap tilt">Épisode 5</span></div>
   <p class="credits__t rv" style="margin-top:20px">Avec la participation de</p>
   <div style="position:relative"><div class="credits__list" id="credits"></div><svg class="visor" data-v="2" viewBox="0 0 60 40" style="left:4%;bottom:-30px" aria-label="Visière cachée"><path d="M6 22c0-9 11-15 24-15s24 6 24 15c0 2-1 3-3 3H9c-2 0-3-1-3-3z" fill="#2E46E8"/><path d="M9 25h42c4 0 7 3 7 6 0 2-2 3-4 3H6c-2 0-4-1-4-3 0-3 3-6 7-6z" fill="#3B52FF"/><path d="M14 18c4-5 10-7 16-7" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
-  <div class="feat">
-    <div class="rv"><span>Collab</span><strong>Redmi</strong></div>
-    <div class="rv"><span>Collab</span><strong>Rexona</strong></div>
-    <div class="rv"><span>Collab</span><strong>Close up</strong></div>
-    <div class="rv"><span>Collab</span><strong>Infinix</strong></div>
-    <div class="rv"><span>Collab</span><strong>Ivoire360</strong></div>
-    <div class="rv"><span>Collab</span><strong>Restaurant 25/8</strong></div>
-  </div>
 </section>
 
 <section class="ep" id="formats" data-ep="Épisode 6" data-name="Les formats" data-img="img/g-profil.jpg">
@@ -766,7 +755,7 @@ html.lenis,html.lenis body{height:auto}
       <div><small>Tourné à</small><strong>Abidjan, Côte d'Ivoire</strong></div>
       <div><small>Diffusé sur</small><strong>TikTok · Facebook · Instagram · YouTube · Snapchat</strong></div>
       <div><small>Site internet</small><strong>SC Project</strong></div>
-      <div><small>Prochain épisode</small><strong>Saison 2, fin décembre</strong></div>
+      <div><small>Prochainement</small><strong>Nouveaux concepts 2027</strong></div>
     </div>
   </div>
   <div class="end__word">On est <span class="o">boosté</span></div>
@@ -782,7 +771,7 @@ html.lenis,html.lenis body{height:auto}
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const PROFILES={tiktok:"https://www.tiktok.com/@ledabsontik",youtube:"https://www.youtube.com/results?search_query=dabson",facebook:"https://www.facebook.com/share/1Afig9FihB/",instagram:"https://www.instagram.com/ledabsonig",snapchat:"https://snapchat.com/t/voKzsihM"};
 const PF_NAME={tiktok:"TikTok",youtube:"YouTube",facebook:"Facebook",instagram:"Instagram"};
-const FALLBACK=[{"platform": "tiktok", "title": "7,2M vues", "kind": "Sketch", "thumb": "img/g-profil.jpg", "url": "", "date": "2026-01-01", "likes": "815K", "com": "10K", "save": "76K"}, {"platform": "tiktok", "title": "2,6M vues", "kind": "Sketch", "thumb": "img/g-equipe.jpg", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K"}, {"platform": "tiktok", "title": "2,2M vues", "kind": "Saint Valentin", "thumb": "img/g-clin.jpg", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K"}, {"platform": "tiktok", "title": "834K vues", "kind": "Mini série", "thumb": "img/g-ecran.jpg", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K"}, {"platform": "tiktok", "title": "725K vues", "kind": "Mini série", "thumb": "img/g-nb.jpg", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K"}, {"platform": "tiktok", "title": "648K vues", "kind": "Sketch", "thumb": "img/g-event.jpg", "url": "", "date": "2026-06-20", "likes": "135K", "com": "1 616", "save": "11K"}];
+const FALLBACK=[{"platform": "tiktok", "brand": "Redmi", "title": "7,2M vues", "kind": "Collab TikTok", "thumb": "img/g-profil.jpg", "url": "", "date": "", "likes": "815K", "com": "10K", "save": "76K"}, {"platform": "tiktok", "brand": "Infinix", "title": "2,6M vues", "kind": "Collab TikTok", "thumb": "img/g-equipe.jpg", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K"}, {"platform": "tiktok", "brand": "Restaurant 25/8", "title": "2,2M vues", "kind": "Collab TikTok", "thumb": "img/g-clin.jpg", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K"}, {"platform": "tiktok", "brand": "Ivoire360", "title": "834K vues", "kind": "Collab TikTok", "thumb": "img/studio-regard.jpg", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K"}, {"platform": "tiktok", "brand": "Close up", "title": "725K vues", "kind": "Collab TikTok", "thumb": "img/graffiti-visiere.jpg", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K"}, {"platform": "tiktok", "brand": "Rexona", "title": "648K vues", "kind": "Collab TikTok", "thumb": "img/studio-bras.jpg", "url": "", "date": "", "likes": "135K", "com": "1 616", "save": "11K"}];
 
 function applyProfiles(p){Object.assign(PROFILES,p||{});$$("[data-pf]").forEach(a=>{const u=PROFILES[a.dataset.pf];if(u)a.href=u})}
 applyProfiles();
@@ -797,7 +786,7 @@ applyProfiles();
 
 (function phone(){
   const imgs=$$("#slides img"),segs=$("#segs"),cap=$("#capTxt"),sub=$("#capSub");
-  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["mes boostés 😉","une communauté de 2,85M"],["en tournage","créateur, comédien, vidéaste"],["regard de la série","12M de vues en 28 jours"],["I love slam","Abidjan, Côte d'Ivoire"],["épisode suivant ce soir","saison 2 fin décembre"]];
+  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["mes boostés 😉","une communauté de 2,85M"],["en tournage","créateur, comédien, vidéaste"],["regard de la série","12M de vues en 28 jours"],["I love slam","Abidjan, Côte d'Ivoire"],["épisode suivant ce soir","nouveaux concepts 2027"]];
   imgs.forEach(()=>segs.appendChild(document.createElement("i")));
   const bars=$$("i",segs);let i=0,t0=performance.now();const D=3200;
   function go(n){imgs[i].classList.remove("on");i=(n+imgs.length)%imgs.length;imgs[i].classList.add("on");t0=performance.now();cap.classList.add("swap");setTimeout(()=>{cap.textContent=T[i][0];sub.textContent=T[i][1];cap.classList.remove("swap")},250)}
@@ -832,19 +821,19 @@ function renderAud(k){
 tabs("#audTabs",renderAud);
 const aio=new IntersectionObserver(es=>{if(es[0].isIntersecting){renderAud("tiktok");aio.disconnect()}},{threshold:.2});aio.observe($("#audience"));
 
-(function countdown(){const target=new Date("2026-12-25T19:00:00Z").getTime();const els=["d","h","m","s"].map(k=>$(`[data-cd="${k}"]`));const t=()=>{let r=Math.max(0,target-Date.now())/1000;const v=[Math.floor(r/86400),Math.floor(r%86400/3600),Math.floor(r%3600/60),Math.floor(r%60)];els.forEach((e,i)=>e.textContent=String(v[i]).padStart(2,"0"))};t();setInterval(t,1000)})();
+(function countdown(){if(!document.querySelector("[data-cd]"))return;const target=new Date("2026-12-25T19:00:00Z").getTime();const els=["d","h","m","s"].map(k=>$(`[data-cd="${k}"]`));const t=()=>{let r=Math.max(0,target-Date.now())/1000;const v=[Math.floor(r/86400),Math.floor(r%86400/3600),Math.floor(r%3600/60),Math.floor(r%60)];els.forEach((e,i)=>e.textContent=String(v[i]).padStart(2,"0"))};t();setInterval(t,1000)})();
 
 let VIDEOS=FALLBACK;
 function fmtDate(s){try{return new Date(s).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}}
 function renderFeed(k){
   const list=VIDEOS.filter(v=>k==="all"||v.platform===k).slice(0,9);
-  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><img src="${v.thumb}" alt="" loading="lazy"><div class="vid__top"><span class="cap">${PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"} · ${fmtDate(v.date)}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
+  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><img src="${v.thumb}" alt="" loading="lazy"><div class="vid__top"><span class="cap">${v.brand||PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"}${v.date?" · "+fmtDate(v.date):""}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
   $$("#feed .vid").forEach((el,i)=>setTimeout(()=>el.classList.add("in"),80*i));
 }
 tabs("#feedTabs",renderFeed);
 fetch("data/videos.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{if(j.videos&&j.videos.length)VIDEOS=j.videos;applyProfiles(j.profiles);if(j.updated)$("#syncTxt").textContent="Flux connecté · mis à jour le "+fmtDate(j.updated)}).catch(()=>{}).finally(()=>{const fio=new IntersectionObserver(es=>{if(es[0].isIntersecting){renderFeed("all");fio.disconnect()}},{threshold:.1});fio.observe($("#videos"))});
 
-(function credits(){const B=["Samsung","Rexona","Infinix","Close up","Xiaomi","Yango","Chicken Nation","Kadolo","Sam's Abidjan","ZTE","Betclic","Ivoire360","Itel","Paripesa","YEMAG","Nafolo","Kimia Lite","Redmi"];const box=$("#credits");box.innerHTML=B.map(n=>`<span>${n}</span>`).join("");const sp=$$("span",box);let k=0;setInterval(()=>{sp.forEach(s=>s.classList.remove("lit"));sp[k%sp.length].classList.add("lit");k+=5},900)})();
+(function credits(){const B=["Samsung","Rexona","Infinix","Close up","Xiaomi","Yango","Chicken Nation","Kadolo","Sam's Abidjan","ZTE","Ivoire360","Itel","YEMAG","Nafolo","Kimia Lite","Redmi"];const box=$("#credits");box.innerHTML=B.map(n=>`<span>${n}</span>`).join("");const sp=$$("span",box);let k=0;setInterval(()=>{sp.forEach(s=>s.classList.remove("lit"));sp[k%sp.length].classList.add("lit");k+=5},900)})();
 
 $$(".acc button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
 
