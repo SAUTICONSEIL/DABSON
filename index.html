@@ -89,6 +89,7 @@ b,strong{font-weight:800}
 .phone__segs i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
 .phone__segs i:after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(var(--p,0));transform-origin:left}
 .phone__who{position:absolute;left:12px;top:22px;z-index:3;display:flex;align-items:center;gap:8px;font-weight:800;font-size:14px}
+.phone__av{width:30px;height:30px;border-radius:50%;border:1.5px solid #fff;background:var(--blue);display:grid;place-items:center;font-family:var(--cond);font-size:16px}
 .phone__who img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid #fff}
 .phone__who small{font-weight:500;color:rgba(255,255,255,.75)}
 .phone__rail{position:absolute;right:10px;bottom:90px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:16px}
@@ -126,7 +127,7 @@ b,strong{font-weight:800}
 .story{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,100px);align-items:start}
 .story__pics{position:sticky;top:90px;display:grid;grid-template-columns:1.3fr 1fr;gap:12px}
 .story__pics figure{border-radius:16px;overflow:hidden;position:relative}
-.story__pics figure:first-child{grid-row:span 2}
+.story__pics figure:first-of-type{grid-row:span 2}
 .story__pics img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .story__pics figure:hover img{transform:scale(1.05)}
 .story__pics figcaption{position:absolute;left:12px;bottom:12px}
@@ -249,6 +250,8 @@ b,strong{font-weight:800}
 .vid__bot span{font-size:13px;color:rgba(255,255,255,.75);font-weight:600}
 .vid__play{position:absolute;left:50%;top:50%;z-index:2;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;background:rgba(255,255,255,.92);color:#000;display:grid;place-items:center;opacity:0;transform:scale(.7);transition:all .35s cubic-bezier(.2,.8,.2,1)}
 .vid:hover .vid__play{opacity:1;transform:scale(1)}
+.vid{background:radial-gradient(120% 90% at 20% 0%,rgba(59,82,255,.28),transparent 60%),var(--bg2)}
+.vid__brand{position:absolute;left:18px;right:18px;top:50%;transform:translateY(-60%);font-family:var(--cond);font-weight:900;text-transform:uppercase;font-size:clamp(40px,3.8vw,64px);line-height:.88;color:var(--txt);overflow-wrap:anywhere}
 .sync{display:flex;align-items:center;gap:10px;color:var(--mute);font-size:14px;font-weight:600}
 .sync i{width:9px;height:9px;border-radius:50%;background:#7CE3A0;animation:pl 1.8s infinite}
 @keyframes pl{50%{opacity:.3}}
@@ -481,7 +484,6 @@ html.lenis,html.lenis body{height:auto}
 <div class="pill" id="pill"></div>
 <button class="boost" id="boost" type="button" aria-label="Booster"><span class="boost__ic">🚀</span><span>Booster<small id="boostN">0 boost</small></span></button>
 <div class="player" id="player">
-  <div class="player__th"><img id="playerImg" src="img/visiere.jpg" alt=""></div>
   <div style="min-width:0;flex:1">
     <div class="player__t" id="playerT">Épisode 1</div>
     <div class="player__n" id="playerN">L'histoire</div>
@@ -491,7 +493,7 @@ html.lenis,html.lenis body{height:auto}
 
 <main>
 
-<section class="hero" id="accueil" data-ep="Pilote" data-name="Bienvenue chez Dabson" data-img="img/regard.jpg">
+<section class="hero" id="accueil" data-ep="Pilote" data-name="Bienvenue chez Dabson">
   <div class="hero__l">
     <div class="hero__roles"><span class="cap">Créateur de contenu</span><span class="cap">Web comédien</span><span class="cap">Vidéaste</span></div>
     <h1 class="hero__name"><span><b>Dab</b></span><span><b>son</b></span></h1>
@@ -506,14 +508,12 @@ html.lenis,html.lenis body{height:auto}
   <div class="phone" id="phone" title="Toucher pour passer, double toucher pour aimer">
     <div class="phone__slides" id="slides">
       <img src="img/visiere.jpg" alt="Dabson" class="on">
-      <img src="img/g-clin.jpg" alt="">
-      <img src="img/g-film.jpg" alt="">
-      <img src="img/regard.jpg" alt="">
-      <img src="img/g-slam.jpg" alt="">
-      <img src="img/sourire2.jpg" alt="">
+      <img src="img/graffiti.jpg" alt="">
+      <img src="img/sourire-visiere.jpg" alt="">
+      <img src="img/profil-nike.jpg" alt="">
     </div>
     <div class="phone__segs" id="segs"></div>
-    <div class="phone__who"><img src="img/sourire2.jpg" alt=""><div>ledabsontik<br><small>Abidjan</small></div></div>
+    <div class="phone__who"><span class="phone__av">D</span><div>ledabsontik<br><small>Abidjan</small></div></div>
     <div class="phone__rail">
       <div><svg><use href="#i-heart"/></svg>1,8M</div>
       <div><svg><use href="#i-com"/></svg>28,3K</div>
@@ -533,7 +533,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="ep" id="histoire" data-ep="Épisode 1" data-name="L'histoire" data-img="img/visiere.jpg">
+<section class="ep" id="histoire" data-ep="Épisode 1" data-name="L'histoire">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 1</span></div>
@@ -543,9 +543,9 @@ html.lenis,html.lenis body{height:auto}
   </div>
   <div class="story">
     <div class="story__pics rv"><svg class="visor" data-v="1" viewBox="0 0 60 40" style="right:-18px;top:-18px" aria-label="Visière cachée"><path d="M6 22c0-9 11-15 24-15s24 6 24 15c0 2-1 3-3 3H9c-2 0-3-1-3-3z" fill="#2E46E8"/><path d="M9 25h42c4 0 7 3 7 6 0 2-2 3-4 3H6c-2 0-4-1-4-3 0-3 3-6 7-6z" fill="#3B52FF"/><path d="M14 18c4-5 10-7 16-7" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
-      <figure><img src="img/visiere.jpg" alt="Dabson"><figcaption><span class="cap">Abidjan</span></figcaption></figure>
+      <figure><img src="img/sourire.jpg" alt="Dabson"><figcaption><span class="cap">Abidjan</span></figcaption></figure>
+      <figure><img src="img/g-film.jpg" alt="Dabson filme"></figure>
       <figure><img src="img/g-event.jpg" alt="Dabson"></figure>
-      <figure><img src="img/g-clin.jpg" alt="Dabson"></figure>
     </div>
     <div class="story__txt">
       <p class="rv"><b>Dabson</b> est un <mark>créateur de contenu</mark>, <mark>web comédien</mark> et <mark>vidéaste</mark> ivoirien basé à Abidjan.</p>
@@ -562,7 +562,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="sig" data-ep="Interlude" data-name="On est boosté !" data-img="img/sourire2.jpg">
+<section class="sig" data-ep="Interlude" data-name="On est boosté !">
   <span class="cap tilt sig__stick">sa phrase culte</span>
   <div class="sig__word lines" data-lines><span class="l"><span>On est</span></span><span class="l"><span><span class="b">boosté</span><span class="o"> !</span></span></span></div>
   <div class="sig__row">
@@ -576,7 +576,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="ep" id="chiffres" data-ep="Épisode 2" data-name="Les chiffres" data-img="img/g-ecran.jpg">
+<section class="ep" id="chiffres" data-ep="Épisode 2" data-name="Les chiffres">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 2</span></div>
@@ -620,7 +620,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="ep" id="series" style="padding-top:0" data-ep="Épisode 3" data-name="Les séries" data-img="img/g-slam.jpg">
+<section class="ep" id="series" style="padding-top:0" data-ep="Épisode 3" data-name="Les séries">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 3</span></div>
@@ -647,27 +647,25 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="reel" id="coulisses" data-ep="Bonus" data-name="Les coulisses" data-img="img/g-film.jpg">
+<section class="reel" id="coulisses" data-ep="Bonus" data-name="Les coulisses">
   <div class="reel__in">
     <div class="reel__head">
       <div><div class="ep__tag"><span class="cap tilt">Bonus</span></div><h2 class="h">Les <em>coulisses</em></h2></div>
-      <span class="reel__n"><b id="reelN">01</b> / 09</span>
+      <span class="reel__n"><b id="reelN">01</b> / 07</span>
     </div>
     <div class="reel__track" id="reelTrack">
-      <figure class="shot"><img src="img/g-film.jpg" alt=""><figcaption><span class="cap tilt">en tournage</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-clin.jpg" alt=""><figcaption><span class="cap tilt">mes boostés 😉</span></figcaption></figure>
-      <figure class="shot"><img src="img/studio-regard.jpg" alt=""><figcaption><span class="cap tilt">le regard</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-slam.jpg" alt=""><figcaption><span class="cap tilt">I love slam</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-debardeur.jpg" alt=""><figcaption><span class="cap tilt">Abidjan</span></figcaption></figure>
       <figure class="shot"><img src="img/g-ecran.jpg" alt=""><figcaption><span class="cap tilt">le cadrage</span></figcaption></figure>
-      <figure class="shot"><img src="img/graffiti-visiere.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-event.jpg" alt=""><figcaption><span class="cap tilt">tapis rouge</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-profil.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
       <figure class="shot"><img src="img/g-nb.jpg" alt=""><figcaption><span class="cap tilt">vidéaste</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-equipe.jpg" alt=""><figcaption><span class="cap tilt">l'équipe</span></figcaption></figure>
+      <figure class="shot"><img src="img/trio.jpg" alt=""><figcaption><span class="cap tilt">au montage</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-clin.jpg" alt=""><figcaption><span class="cap tilt">mes boostés 😉</span></figcaption></figure>
+      <figure class="shot"><img src="img/g-profil.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="ep" id="videos" data-ep="Épisode 4" data-name="Les vidéos" data-img="img/g-clin.jpg">
+<section class="ep" id="videos" data-ep="Épisode 4" data-name="Les vidéos">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 4</span></div>
@@ -688,13 +686,13 @@ html.lenis,html.lenis body{height:auto}
   <div class="feed" id="feed"></div>
 </section>
 
-<section class="credits" id="marques" data-ep="Épisode 5" data-name="Les marques" data-img="img/g-event.jpg">
+<section class="credits" id="marques" data-ep="Épisode 5" data-name="Les marques">
   <div class="ep__tag"><span class="cap tilt">Épisode 5</span></div>
   <p class="credits__t rv" style="margin-top:20px">Avec la participation de</p>
   <div style="position:relative"><div class="credits__list" id="credits"></div><svg class="visor" data-v="2" viewBox="0 0 60 40" style="left:4%;bottom:-30px" aria-label="Visière cachée"><path d="M6 22c0-9 11-15 24-15s24 6 24 15c0 2-1 3-3 3H9c-2 0-3-1-3-3z" fill="#2E46E8"/><path d="M9 25h42c4 0 7 3 7 6 0 2-2 3-4 3H6c-2 0-4-1-4-3 0-3 3-6 7-6z" fill="#3B52FF"/><path d="M14 18c4-5 10-7 16-7" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
 </section>
 
-<section class="ep" id="formats" data-ep="Épisode 6" data-name="Les formats" data-img="img/g-profil.jpg">
+<section class="ep" id="formats" data-ep="Épisode 6" data-name="Les formats">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap tilt">Épisode 6</span></div>
@@ -719,7 +717,7 @@ html.lenis,html.lenis body{height:auto}
   </div>
 </section>
 
-<section class="ep" id="contact" style="padding-top:0" data-ep="Épisode 7" data-name="Collaborer" data-img="img/sourire2.jpg">
+<section class="ep" id="contact" style="padding-top:0" data-ep="Épisode 7" data-name="Collaborer">
   <div class="ep__head">
     <div>
       <div class="ep__tag"><span class="cap bl tilt">Prochain épisode : votre marque</span></div>
@@ -760,7 +758,7 @@ html.lenis,html.lenis body{height:auto}
 
 </main>
 
-<footer class="end" data-ep="Générique" data-name="Fin de l'épisode" data-img="img/g-profil.jpg">
+<footer class="end" data-ep="Générique" data-name="Fin de l'épisode">
   <div class="end__roll">
     <div class="end__in">
       <div><small>Une production</small><strong>Dabson</strong></div>
@@ -786,7 +784,7 @@ html.lenis,html.lenis body{height:auto}
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const PROFILES={tiktok:"https://www.tiktok.com/@ledabsontik",youtube:"https://www.youtube.com/results?search_query=dabson",facebook:"https://www.facebook.com/share/1Afig9FihB/",instagram:"https://www.instagram.com/ledabsonig",snapchat:"https://snapchat.com/t/voKzsihM"};
 const PF_NAME={tiktok:"TikTok",youtube:"YouTube",facebook:"Facebook",instagram:"Instagram"};
-const FALLBACK=[{"platform": "tiktok", "brand": "Redmi", "title": "7,2M vues", "kind": "Collab TikTok", "thumb": "img/g-profil.jpg", "url": "", "date": "", "likes": "815K", "com": "10K", "save": "76K"}, {"platform": "tiktok", "brand": "Infinix", "title": "2,6M vues", "kind": "Collab TikTok", "thumb": "img/g-equipe.jpg", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K"}, {"platform": "tiktok", "brand": "Restaurant 25/8", "title": "2,2M vues", "kind": "Collab TikTok", "thumb": "img/g-clin.jpg", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K"}, {"platform": "tiktok", "brand": "Ivoire360", "title": "834K vues", "kind": "Collab TikTok", "thumb": "img/studio-regard.jpg", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K"}, {"platform": "tiktok", "brand": "Close up", "title": "725K vues", "kind": "Collab TikTok", "thumb": "img/graffiti-visiere.jpg", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K"}, {"platform": "tiktok", "brand": "Rexona", "title": "648K vues", "kind": "Collab TikTok", "thumb": "img/studio-bras.jpg", "url": "", "date": "", "likes": "135K", "com": "1 616", "save": "11K"}];
+const FALLBACK=[{"platform": "tiktok", "brand": "Redmi", "title": "7,2M vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "815K", "com": "10K", "save": "76K"}, {"platform": "tiktok", "brand": "Infinix", "title": "2,6M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K"}, {"platform": "tiktok", "brand": "Restaurant 25/8", "title": "2,2M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K"}, {"platform": "tiktok", "brand": "Ivoire360", "title": "834K vues", "kind": "Collab TikTok", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K"}, {"platform": "tiktok", "brand": "Close up", "title": "725K vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K"}, {"platform": "tiktok", "brand": "Rexona", "title": "648K vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "135K", "com": "1 616", "save": "11K"}];
 
 function applyProfiles(p){Object.assign(PROFILES,p||{});$$("[data-pf]").forEach(a=>{const u=PROFILES[a.dataset.pf];if(u)a.href=u})}
 applyProfiles();
@@ -801,7 +799,7 @@ applyProfiles();
 
 (function phone(){
   const imgs=$$("#slides img"),segs=$("#segs"),cap=$("#capTxt"),sub=$("#capSub");
-  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["mes boostés 😉","une communauté de 2,85M"],["en tournage","créateur, comédien, vidéaste"],["regard de la série","12M de vues en 28 jours"],["I love slam","Abidjan, Côte d'Ivoire"],["épisode suivant ce soir","nouveaux concepts 2027"]];
+  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["la visière, toujours","Abidjan, Côte d'Ivoire"],["mes boostés 😉","une communauté de 2,85M"],["épisode suivant ce soir","nouveaux concepts 2027"]];
   imgs.forEach(()=>segs.appendChild(document.createElement("i")));
   const bars=$$("i",segs);let i=0,t0=performance.now();const D=3200;
   function go(n){imgs[i].classList.remove("on");i=(n+imgs.length)%imgs.length;imgs[i].classList.add("on");t0=performance.now();cap.classList.add("swap");setTimeout(()=>{cap.textContent=T[i][0];sub.textContent=T[i][1];cap.classList.remove("swap")},250)}
@@ -842,7 +840,7 @@ let VIDEOS=FALLBACK;
 function fmtDate(s){try{return new Date(s).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}}
 function renderFeed(k){
   const list=VIDEOS.filter(v=>k==="all"||v.platform===k).slice(0,9);
-  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><img src="${v.thumb}" alt="" loading="lazy"><div class="vid__top"><span class="cap">${v.brand||PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"}${v.date?" · "+fmtDate(v.date):""}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
+  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><span class="vid__brand">${v.brand||PF_NAME[v.platform]}</span><div class="vid__top"><span class="cap">${v.brand||PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"}${v.date?" · "+fmtDate(v.date):""}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
   $$("#feed .vid").forEach((el,i)=>setTimeout(()=>el.classList.add("in"),80*i));
 }
 tabs("#feedTabs",renderFeed);
@@ -976,16 +974,16 @@ $$("[data-copy]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault();e
 })();
 
 (function scroll(){
-  const top=$("#top"),player=$("#player"),pT=$("#playerT"),pN=$("#playerN"),pI=$("#playerImg"),pB=$("#playerBar");
+  const top=$("#top"),player=$("#player"),pT=$("#playerT"),pN=$("#playerN"),pB=$("#playerBar");
   const eps=$$("[data-ep]"),navs=$$("#nav a"),reel=$("#coulisses"),track=$("#reelTrack"),rn=$("#reelN");let cur=null;
   function frame(){
     const y=scrollY,vh=innerHeight;
     top.classList.toggle("solid",y>40);
     player.classList.toggle("show",y>vh*.6);
     let act=eps[0];for(const s of eps){if(s.getBoundingClientRect().top<vh*.5)act=s}
-    if(act!==cur){cur=act;pT.textContent=act.dataset.ep;pN.textContent=act.dataset.name;pI.src=act.dataset.img;navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+act.id))}
+    if(act!==cur){cur=act;pT.textContent=act.dataset.ep;pN.textContent=act.dataset.name;navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+act.id))}
     const r=act.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height));pB.style.width=p*100+"%";
-    if(innerWidth>760){const rr=reel.getBoundingClientRect(),tot=reel.offsetHeight-vh,pp=Math.max(0,Math.min(1,-rr.top/tot)),max=track.scrollWidth-innerWidth;track.style.transform=`translateX(${-pp*max}px)`;rn.textContent=String(Math.min(9,1+Math.floor(pp*9))).padStart(2,"0")}
+    if(innerWidth>760){const rr=reel.getBoundingClientRect(),tot=reel.offsetHeight-vh,pp=Math.max(0,Math.min(1,-rr.top/tot)),max=track.scrollWidth-innerWidth;track.style.transform=`translateX(${-pp*max}px)`;rn.textContent=String(Math.min(7,1+Math.floor(pp*7))).padStart(2,"0")}
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
