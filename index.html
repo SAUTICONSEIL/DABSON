@@ -221,11 +221,11 @@ b,strong{font-weight:800}
 @media (max-width:900px){.series{grid-template-columns:1fr 1fr}.s2{grid-template-columns:1fr}.count{border-left:0;border-top:1px solid var(--line)}.extra{grid-template-columns:1fr}}
 @media (max-width:560px){.series{grid-template-columns:1fr}}
 
-.reel{height:320vh;position:relative}
-.reel__in{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.reel{height:auto;position:relative}
+.reel__in{position:relative;padding:40px 0 120px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:30px}
 .reel__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:60px var(--pad) 0}
 .reel__track{display:flex;gap:14px;padding:0 var(--pad);will-change:transform;align-items:flex-start}
-.shot{flex:none;width:clamp(220px,22vw,320px);aspect-ratio:9/14;border-radius:18px;overflow:hidden;position:relative}
+.shot{flex:1;min-width:220px;max-width:420px;aspect-ratio:9/14;border-radius:18px;overflow:hidden;position:relative}
 .shot:nth-child(3n+2){margin-top:50px}
 .shot:nth-child(3n){margin-top:20px}
 .shot img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
@@ -509,8 +509,6 @@ html.lenis,html.lenis body{height:auto}
     <div class="phone__slides" id="slides">
       <img src="img/visiere.jpg" alt="Dabson" class="on">
       <img src="img/graffiti.jpg" alt="">
-      <img src="img/sourire-visiere.jpg" alt="">
-      <img src="img/profil-nike.jpg" alt="">
     </div>
     <div class="phone__segs" id="segs"></div>
     <div class="phone__who"><span class="phone__av">D</span><div>ledabsontik<br><small>Abidjan</small></div></div>
@@ -651,16 +649,12 @@ html.lenis,html.lenis body{height:auto}
   <div class="reel__in">
     <div class="reel__head">
       <div><div class="ep__tag"><span class="cap tilt">Bonus</span></div><h2 class="h">Les <em>coulisses</em></h2></div>
-      <span class="reel__n"><b id="reelN">01</b> / 07</span>
+      <span class="reel__n"><b id="reelN">01</b> / 03</span>
     </div>
     <div class="reel__track" id="reelTrack">
       <figure class="shot"><img src="img/g-debardeur.jpg" alt=""><figcaption><span class="cap tilt">Abidjan</span></figcaption></figure>
       <figure class="shot"><img src="img/g-ecran.jpg" alt=""><figcaption><span class="cap tilt">le cadrage</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-nb.jpg" alt=""><figcaption><span class="cap tilt">vidéaste</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-equipe.jpg" alt=""><figcaption><span class="cap tilt">l'équipe</span></figcaption></figure>
       <figure class="shot"><img src="img/trio.jpg" alt=""><figcaption><span class="cap tilt">au montage</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-clin.jpg" alt=""><figcaption><span class="cap tilt">mes boostés 😉</span></figcaption></figure>
-      <figure class="shot"><img src="img/g-profil.jpg" alt=""><figcaption><span class="cap tilt">la visière</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -784,7 +778,7 @@ html.lenis,html.lenis body{height:auto}
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
 const PROFILES={tiktok:"https://www.tiktok.com/@ledabsontik",youtube:"https://www.youtube.com/results?search_query=dabson",facebook:"https://www.facebook.com/share/1Afig9FihB/",instagram:"https://www.instagram.com/ledabsonig",snapchat:"https://snapchat.com/t/voKzsihM"};
 const PF_NAME={tiktok:"TikTok",youtube:"YouTube",facebook:"Facebook",instagram:"Instagram"};
-const FALLBACK=[{"platform": "tiktok", "brand": "Redmi", "title": "7,2M vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "815K", "com": "10K", "save": "76K"}, {"platform": "tiktok", "brand": "Infinix", "title": "2,6M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K"}, {"platform": "tiktok", "brand": "Restaurant 25/8", "title": "2,2M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K"}, {"platform": "tiktok", "brand": "Ivoire360", "title": "834K vues", "kind": "Collab TikTok", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K"}, {"platform": "tiktok", "brand": "Close up", "title": "725K vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K"}, {"platform": "tiktok", "brand": "Rexona", "title": "648K vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "135K", "com": "1 616", "save": "11K"}];
+const FALLBACK=[{"platform": "tiktok", "brand": "Redmi", "title": "7,2M vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "815K", "com": "10K", "save": "76K", "thumb": "img/g-clin.jpg"}, {"platform": "tiktok", "brand": "Infinix", "title": "2,6M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-24", "likes": "378K", "com": "5 350", "save": "46K", "thumb": "img/g-equipe.jpg"}, {"platform": "tiktok", "brand": "Restaurant 25/8", "title": "2,2M vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-14", "likes": "307K", "com": "3 756", "save": "33K", "thumb": "img/sourire-visiere.jpg"}, {"platform": "tiktok", "brand": "Ivoire360", "title": "834K vues", "kind": "Collab TikTok", "url": "", "date": "2026-04-11", "likes": "150K", "com": "2 410", "save": "15K", "thumb": "img/g-profil.jpg"}, {"platform": "tiktok", "brand": "Close up", "title": "725K vues", "kind": "Collab TikTok", "url": "", "date": "2026-02-13", "likes": "111K", "com": "2 479", "save": "15K", "thumb": "img/profil-nike.jpg"}, {"platform": "tiktok", "brand": "Rexona", "title": "648K vues", "kind": "Collab TikTok", "url": "", "date": "", "likes": "135K", "com": "1 616", "save": "11K", "thumb": "img/g-nb.jpg"}];
 
 function applyProfiles(p){Object.assign(PROFILES,p||{});$$("[data-pf]").forEach(a=>{const u=PROFILES[a.dataset.pf];if(u)a.href=u})}
 applyProfiles();
@@ -799,7 +793,7 @@ applyProfiles();
 
 (function phone(){
   const imgs=$$("#slides img"),segs=$("#segs"),cap=$("#capTxt"),sub=$("#capSub");
-  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["la visière, toujours","Abidjan, Côte d'Ivoire"],["mes boostés 😉","une communauté de 2,85M"],["épisode suivant ce soir","nouveaux concepts 2027"]];
+  const T=[["on est boosté !","ledabsontik · 2,1M abonnés"],["la visière, toujours","Abidjan, Côte d'Ivoire"]];
   imgs.forEach(()=>segs.appendChild(document.createElement("i")));
   const bars=$$("i",segs);let i=0,t0=performance.now();const D=3200;
   function go(n){imgs[i].classList.remove("on");i=(n+imgs.length)%imgs.length;imgs[i].classList.add("on");t0=performance.now();cap.classList.add("swap");setTimeout(()=>{cap.textContent=T[i][0];sub.textContent=T[i][1];cap.classList.remove("swap")},250)}
@@ -840,7 +834,7 @@ let VIDEOS=FALLBACK;
 function fmtDate(s){try{return new Date(s).toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"})}catch(e){return s}}
 function renderFeed(k){
   const list=VIDEOS.filter(v=>k==="all"||v.platform===k).slice(0,9);
-  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><span class="vid__brand">${v.brand||PF_NAME[v.platform]}</span><div class="vid__top"><span class="cap">${v.brand||PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"}${v.date?" · "+fmtDate(v.date):""}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
+  $("#feed").innerHTML=list.map((v,n)=>`<a class="vid" href="${v.url||PROFILES[v.platform]}" target="_blank" rel="noopener"><img src="${v.thumb}" alt="" loading="lazy"><div class="vid__top"><span class="cap">${v.brand||PF_NAME[v.platform]}</span>${k==="all"?`<span class="vid__rank">#${n+1}</span>`:""}</div>${v.likes?`<div class="vid__rail"><div><svg><use href="#i-heart"/></svg>${v.likes}</div><div><svg><use href="#i-com"/></svg>${v.com}</div><div><svg><use href="#i-save"/></svg>${v.save}</div></div>`:""}<span class="vid__play"><svg width="22" height="22"><use href="#i-play"/></svg></span><div class="vid__bot"><strong>${v.title}</strong><span>${v.kind||"Vidéo"}${v.date?" · "+fmtDate(v.date):""}</span></div></a>`).join("")||`<p class="small">Aucune vidéo sur ce réseau pour le moment.</p>`;
   $$("#feed .vid").forEach((el,i)=>setTimeout(()=>el.classList.add("in"),80*i));
 }
 tabs("#feedTabs",renderFeed);
@@ -983,7 +977,7 @@ $$("[data-copy]").forEach(b=>b.addEventListener("click",e=>{e.preventDefault();e
     let act=eps[0];for(const s of eps){if(s.getBoundingClientRect().top<vh*.5)act=s}
     if(act!==cur){cur=act;pT.textContent=act.dataset.ep;pN.textContent=act.dataset.name;navs.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+act.id))}
     const r=act.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height));pB.style.width=p*100+"%";
-    if(innerWidth>760){const rr=reel.getBoundingClientRect(),tot=reel.offsetHeight-vh,pp=Math.max(0,Math.min(1,-rr.top/tot)),max=track.scrollWidth-innerWidth;track.style.transform=`translateX(${-pp*max}px)`;rn.textContent=String(Math.min(7,1+Math.floor(pp*7))).padStart(2,"0")}
+    if(innerWidth>760){const rr=reel.getBoundingClientRect(),tot=reel.offsetHeight-vh,pp=Math.max(0,Math.min(1,-rr.top/tot)),max=Math.max(0,track.scrollWidth-innerWidth);track.style.transform=`translateX(${-pp*max}px)`;rn.textContent=String(Math.min(3,1+Math.floor(pp*3))).padStart(2,"0")}
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);

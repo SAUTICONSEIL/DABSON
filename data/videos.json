@@ -17,7 +17,8 @@
       "date": "",
       "likes": "815K",
       "com": "10K",
-      "save": "76K"
+      "save": "76K",
+      "thumb": "img/g-clin.jpg"
     },
     {
       "platform": "tiktok",
@@ -28,7 +29,8 @@
       "date": "2026-02-24",
       "likes": "378K",
       "com": "5 350",
-      "save": "46K"
+      "save": "46K",
+      "thumb": "img/g-equipe.jpg"
     },
     {
       "platform": "tiktok",
@@ -39,7 +41,8 @@
       "date": "2026-02-14",
       "likes": "307K",
       "com": "3 756",
-      "save": "33K"
+      "save": "33K",
+      "thumb": "img/sourire-visiere.jpg"
     },
     {
       "platform": "tiktok",
@@ -50,7 +53,8 @@
       "date": "2026-04-11",
       "likes": "150K",
       "com": "2 410",
-      "save": "15K"
+      "save": "15K",
+      "thumb": "img/g-profil.jpg"
     },
     {
       "platform": "tiktok",
@@ -61,7 +65,8 @@
       "date": "2026-02-13",
       "likes": "111K",
       "com": "2 479",
-      "save": "15K"
+      "save": "15K",
+      "thumb": "img/profil-nike.jpg"
     },
     {
       "platform": "tiktok",
@@ -72,7 +77,8 @@
       "date": "",
       "likes": "135K",
       "com": "1 616",
-      "save": "11K"
+      "save": "11K",
+      "thumb": "img/g-nb.jpg"
     }
   ]
 }
