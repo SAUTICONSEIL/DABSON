@@ -722,12 +722,11 @@ html.lenis,html.lenis body{height:auto}
     <div class="rv">
       <p class="ep__lead">Choisissez un format et une date, laissez quelques mots. <b>Votre demande arrive directement au management</b> sur WhatsApp ou par mail.</p>
       <div class="contact">
-        <a href="https://wa.me/2250712194673" target="_blank" rel="noopener"><div><small>Management · WhatsApp</small><strong>+225 07 12 19 46 73</strong></div><span class="copy" data-copy="+2250712194673">Copier</span></a>
+        <a href="https://wa.me/2250702387408" target="_blank" rel="noopener"><div><small>Management · WhatsApp</small><strong>+225 07 02 38 74 08</strong></div><span class="copy" data-copy="+2250702387408">Copier</span></a>
         <a href="mailto:collaborationdabson@gmail.com"><div><small>Mail</small><strong>collaborationdabson@gmail.com</strong></div><span class="copy" data-copy="collaborationdabson@gmail.com">Copier</span></a>
       </div>
       <div class="socials">
         <a data-pf="tiktok" href="#" target="_blank" rel="noopener"><svg><use href="#i-tiktok"/></svg>TikTok</a>
-        <a data-pf="facebook" href="#" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg>Facebook</a>
         <a data-pf="instagram" href="#" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Instagram</a>
         <a data-pf="youtube" href="#" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg>YouTube</a>
         <a data-pf="snapchat" href="#" target="_blank" rel="noopener"><svg><use href="#i-snap"/></svg>Snapchat</a>
@@ -840,7 +839,7 @@ function renderFeed(k){
 tabs("#feedTabs",renderFeed);
 fetch("data/videos.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(j=>{if(j.videos&&j.videos.length)VIDEOS=j.videos;applyProfiles(j.profiles);if(j.updated)$("#syncTxt").textContent="Flux connecté · mis à jour le "+fmtDate(j.updated)}).catch(()=>{}).finally(()=>{const fio=new IntersectionObserver(es=>{if(es[0].isIntersecting){renderFeed("all");fio.disconnect()}},{threshold:.1});fio.observe($("#videos"))});
 
-(function credits(){const B=["Samsung","Rexona","Infinix","Close up","Xiaomi","Yango","Chicken Nation","Kadolo","Sam's Abidjan","ZTE","Ivoire360","Itel","YEMAG","Nafolo","Kimia Lite","Redmi"];const box=$("#credits");box.innerHTML=B.map(n=>`<span>${n}</span>`).join("");const sp=$$("span",box);let k=0;setInterval(()=>{sp.forEach(s=>s.classList.remove("lit"));sp[k%sp.length].classList.add("lit");k+=5},900)})();
+(function credits(){const B=["Samsung","Rexona","Infinix","Close up","Xiaomi","Yango","Chicken Nation","Kadolo","Sam's Abidjan","ZTE","Ivoire360","Itel","YEMAG","Nafolo","Kimia Lite","Redmi","Kiabi","Blackview","MTN"];const box=$("#credits");box.innerHTML=B.map(n=>`<span>${n}</span>`).join("");const sp=$$("span",box);let k=0;setInterval(()=>{sp.forEach(s=>s.classList.remove("lit"));sp[k%sp.length].classList.add("lit");k+=5},900)})();
 
 $$(".acc button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
 
@@ -854,9 +853,9 @@ $$(".acc button").forEach(b=>b.addEventListener("click",()=>b.parentElement.clas
     e.preventDefault();const f=e.target;
     const type=$('[data-group="type"] .chip.on').textContent,slot=$('[data-group="slot"] .chip.on').textContent,day=$(".day.on").dataset.v;
     const txt=`Bonjour l'équipe Dabson,\n\nJe souhaite recevoir le tarif et réserver un appel.\nFormat : ${type}\nAppel : ${day} vers ${slot} (heure d'Abidjan)\nNom : ${f.name.value}\nMarque : ${f.brand.value||"Non précisée"}\n\n${f.msg.value}`;
-    const wa="https://wa.me/2250712194673?text="+encodeURIComponent(txt);
+    const wa="https://wa.me/2250702387408?text="+encodeURIComponent(txt);
     const ml="mailto:collaborationdabson@gmail.com?subject="+encodeURIComponent("Collaboration · "+type)+"&body="+encodeURIComponent(txt);
-    const r=$("#result");r.innerHTML=`<b>Votre demande est prête.</b> Envoyez la en un clic :<br><a href="${wa}" target="_blank" rel="noopener">Ouvrir WhatsApp avec le message</a><br><a href="${ml}">Ouvrir le mail pré rempli</a><br><span class="small">Ou écrivez au +225 07 12 19 46 73</span>`;r.classList.add("on");
+    const r=$("#result");r.innerHTML=`<b>Votre demande est prête.</b> Envoyez la en un clic :<br><a href="${wa}" target="_blank" rel="noopener">Ouvrir WhatsApp avec le message</a><br><a href="${ml}">Ouvrir le mail pré rempli</a><br><span class="small">Ou écrivez au +225 07 02 38 74 08</span>`;r.classList.add("on");
   });
 })();
 
